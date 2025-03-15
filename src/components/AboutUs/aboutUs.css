@@ -1,0 +1,39 @@
+@import '../../neumorphism.module.css';
+
+  
+
+/* section::before{
+  display:block;
+  content: "";
+  height: 90vh;
+} */
+
+.letter-spacing {
+  letter-spacing: 6px;
+}
+
+.AboutUs{
+  background-color: #131313;
+}
+
+.line::after {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  content: "";
+  display: block;
+  width: 2px;
+  height: 80px;
+  background-color: white;
+}
+
+.card-design{
+  background-color: #1E1E1E;
+  box-shadow: var(--neu-box-shadow);
+  border-radius: 15px;
+}
+
+.card-team-info{
+  background-color: #1B1B1B;
+}
+

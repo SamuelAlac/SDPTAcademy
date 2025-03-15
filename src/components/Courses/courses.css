@@ -1,0 +1,19 @@
+@import '../../neumorphism.module.css';
+
+.featured-card-design{
+  background-color: #1E1E1E !important;
+  box-shadow: var(--neu-box-shadow);
+  border-radius: 15px;
+}
+
+.search-design{
+  background-color: #1E1E1E !important;
+  border-radius: 30px !important;
+  
+}
+
+.course-card-design{
+  background-color: #1E1E1E !important;
+  border-radius: 15px;
+}
+
