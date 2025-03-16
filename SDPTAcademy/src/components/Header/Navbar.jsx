@@ -25,7 +25,7 @@ const Navbar = ({className}) => {
             <div className="collapse navbar-collapse" id = "navmenu">
               <ul className="navbar-nav ms-auto text-center">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Home">
+                  <Link className="nav-link" to="/">
                     <img className='img-fluid' src={HomeIcon} alt="" />
                     <p className='mb-0'>Home</p>
                   </Link>
