@@ -102,23 +102,23 @@ const Courses = () => {
                 <img src={courseImage} class="card-img-top img-fluid" alt="..."/>
                 <div class="card-body">
                   <h5 class="card-title text-white text-sm-start">Advanced Java Tutorial</h5>
-                    <div className='container d-md-flex align-items-center justify-content-between'>
-                        <div className='d-md-flex align-items-center'>
+                    <div className='container d-lg-flex align-items-center justify-content-between'>
+                        <div className='d-lg-flex align-items-center'>
                           <img className='img-fluid' src={bookIcon} alt="" />
                           <span className="card-text mx-1 text-light">18 Lessons</span>
                         </div>
-                        <div className='d-md-flex align-items-center'>
+                        <div className='d-lg-flex align-items-center'>
                           <img className='img-fluid' src={clockIcon} alt="" />
                           <span className="card-text mx-1 text-light">4h 20m</span>
                         </div>
-                        <div className='d-md-flex align-items-center'>
+                        <div className='d-lg-flex align-items-center'>
                           <img className='img-fluid' src={studentsIcon} alt="" />
                           <span className="card-text mx-1 text-light">69 Students</span>
                         </div>
                     </div>
                   <p class="card-text text-white fs-6 fw-semibold my-3">Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.</p>
 
-                  <div className="container d-md-flex align-items-center justify-content-between">
+                  <div className="container d-lg-flex align-items-center justify-content-between">
                       <div>
                         <p className="card-text fw-bold text-white text-center">₱4799<span className='fw-normal'>/1 year</span></p>
                       </div>
@@ -127,7 +127,7 @@ const Courses = () => {
                         <span className="mx-1 card-text text-white">4.45</span>
                       </div>
                       <div>
-                        <button className="btn btn-warning btn-md rounded-5 text-white d-md-flex align-items-center justify-content-center"data-bs-toggle = "modal" data-bs-target="#purchase">
+                        <button className="btn btn-warning btn-md rounded-5 text-white d-lg-flex align-items-center justify-content-center"data-bs-toggle = "modal" data-bs-target="#purchase">
                         <img src={cartIcon} alt="" className="img-fluid px-1" />Purchase</button>
                       </div>
                     </div>

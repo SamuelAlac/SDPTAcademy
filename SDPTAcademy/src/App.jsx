@@ -22,7 +22,7 @@ const ScrollToTop = () =>{
 
 function App() {
   const [count, setCount] = useState(0)
-//temp
+//temp lng to di ko alam paano lagay tong ScrollToTop sa router dun sa main T^T
   return (
     <Router>
       <ScrollToTop/>
