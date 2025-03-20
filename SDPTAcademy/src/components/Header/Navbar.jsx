@@ -4,7 +4,7 @@ import SDPTLogo from '../../assets/SDPT Logo.svg'
 import HomeIcon from '../../assets/Home Icon.svg'
 import AboutUsIcon from '../../assets/AboutUs Icon.svg'
 import CoursesIcon from '../../assets/Courses Icon.svg'
-import ProfileIcon from '../../assets/Profile Icon.svg'
+import ProfileIcon from '../../assets/Account Icon.svg'
 import './navbar.css'
 
 
@@ -40,6 +40,12 @@ const Navbar = ({className}) => {
                   <Link className="nav-link" to="/Courses">
                     <img className='img-fluid' src={CoursesIcon} alt="" />
                     <p className='mb-0'>Courses</p>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/Login">
+                    <img className='img-fluid' src={ProfileIcon} alt="" />
+                    <p className='mb-0'></p>
                   </Link>
                 </li>
               </ul>

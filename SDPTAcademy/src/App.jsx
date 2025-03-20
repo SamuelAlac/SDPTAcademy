@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import AboutUs from './components/AboutUs/AboutUs';
 import Courses from './components/Courses/Courses';
 import ProtectedRoutes from './components/Protected/ProtectedRoutes';
+import Login from './components/Login/Login';
 
 const ScrollToTop = () =>{
   const location = useLocation();
@@ -30,6 +31,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='AboutUs' element={<AboutUs/>}/>
         <Route path='Courses' element={<Courses/>}/>
+        <Route path='Login' element={<Login/>}/>
 
         <Route element={<ProtectedRoutes/>}>
           
