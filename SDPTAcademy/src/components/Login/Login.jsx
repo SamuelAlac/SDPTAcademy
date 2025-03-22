@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
-import { auth } from '../configs/firebase'
-import { createUserWithEmailAndPassword, } from 'firebase/auth'
 
 
 
