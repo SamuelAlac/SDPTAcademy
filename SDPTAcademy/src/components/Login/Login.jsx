@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
+import { auth } from '../configs/firebase'
+import { createUserWithEmailAndPassword, } from 'firebase/auth'
+
 
 
 const Login = () => {
@@ -18,11 +21,17 @@ const Login = () => {
                 <img src={SDPTLogo} alt="" className="img-fluid" />
                 <h3 className="fw-bold d-inline mx-2">SDPT <span className='lead fs-3'>Academy</span></h3>
             </legend>
-
+            {!isRegistered && 
+                    <div className="my-3">
+                 <label htmlFor="userName" className='form-label fw-semibold fs-5'>Username</label>
+                <input type="text" className="form-control rounded-5" id ="userName"/>
+            </div>
+            }
             <div className="my-3">
                 <label htmlFor="userName" className='form-label fw-semibold fs-5'>Username</label>
                 <input type="text" className="form-control rounded-5" id ="userName"/>
             </div>
+
             <div className="mb-3">
                 <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
                 <input type="email" className="form-control rounded-5" id ="userEmail"/>

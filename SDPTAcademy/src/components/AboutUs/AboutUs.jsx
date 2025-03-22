@@ -67,6 +67,10 @@ const AboutUs = () => {
         <h2 className='text-warning fw-bold text-center mt-5'>SDPT Academy Team</h2> 
           <hr></hr>
           </div>
+
+          <div className="container d-flex align-items-center justify-content-center">
+            
+          </div>
       </section>
     </div>
   )
