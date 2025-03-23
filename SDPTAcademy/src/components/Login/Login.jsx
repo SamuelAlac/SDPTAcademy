@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 
 const Login = () => {
@@ -19,28 +18,31 @@ const Login = () => {
                 <img src={SDPTLogo} alt="" className="img-fluid" />
                 <h3 className="fw-bold d-inline mx-2">SDPT <span className='lead fs-3'>Academy</span></h3>
             </legend>
-            {!isRegistered && 
-                    <div className="my-3">
-                 <label htmlFor="userName" className='form-label fw-semibold fs-5'>Username</label>
-                <input type="text" className="form-control rounded-5" id ="userName"/>
-            </div>
-            }
-            <div className="my-3">
-                <label htmlFor="userName" className='form-label fw-semibold fs-5'>Username</label>
-                <input type="text" className="form-control rounded-5" id ="userName"/>
+            {!isRegistered &&
+            <>
+            <div className="my-md-3">
+                <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
+                <input type="text" className="form-control rounded-5" id ="firstName"/>
             </div>
 
-            <div className="mb-3">
+            <div className="my-md-3">
+                <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
+                <input type="text" className="form-control rounded-5" id ="lastName"/>
+            </div>
+            </>
+            }
+
+            <div className="mb-md-3">
                 <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
                 <input type="email" className="form-control rounded-5" id ="userEmail"/>
             </div>
-            <div className="mb-3">
+            <div className="mb-md-3">
                 <label htmlFor="userPassword" className='form-label fw-semibold fs-5'>Password</label>
                 <input type="password" className="form-control rounded-5" id ="userPassword"/>
             </div>
 
             {!isRegistered &&
-            <div className="mb-3">
+            <div className="mb-md-3">
                 <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
                 <input type="password" className="form-control rounded-5" id ="userConfirmPassword"/>
             </div>
@@ -50,7 +52,7 @@ const Login = () => {
                 <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={""}>LOGIN</button>
             </div>
 
-            <div className="text-center mt-3">
+            <div className="text-center mt-md-3">
                 {isRegistered && 
                     <p className="lead text-secondary">Don't have an account?<span className='fsw-medium text-white mx-1' role='button' onClick={handleChange}>Sign up</span></p>                
                 }
