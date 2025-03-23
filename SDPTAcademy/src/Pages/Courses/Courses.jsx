@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Header/Navbar'
+import Navbar from '../../components/Header/Navbar'
 import lessonImage from '../../assets/lessonImage.svg'
 import bookIcon from '../../assets/bookIcon.svg'
 import clockIcon from '../../assets/clockIcon.svg'

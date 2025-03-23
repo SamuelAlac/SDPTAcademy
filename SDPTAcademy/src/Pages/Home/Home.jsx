@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Header/Navbar'
+import Navbar from '../../components/Header/Navbar'
 import './home.css'
 import SDPTLogo from '../../assets/SDPTLogo_Big.svg'
 import googleTranslate from '../../assets/Google Translate.svg'
