@@ -1,7 +1,7 @@
-import React from 'react'
-import Navbar from '../../components/Header/Navbar'
-import './aboutUs.css'
-import imgSTI from '../../assets/StiBsit.svg'
+import React from "react";
+import Navbar from "../../components/Header/Navbar";
+import "./aboutUs.css";
+import imgSTI from "../../assets/StiBsit.svg";
 
 const AboutUs = () => {
   return (
