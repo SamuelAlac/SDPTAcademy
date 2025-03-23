@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './components/Home/Home';
-import AboutUs from './components/AboutUs/AboutUs';
-import Courses from './components/Courses/Courses';
+import Home from './Pages/Home/Home';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import Courses from './Pages/Courses/Courses';
 import ProtectedRoutes from './components/Protected/ProtectedRoutes';
-import Login from './components/Login/Login';
+import Login from './Pages/Login/Login';
 
 const ScrollToTop = () =>{
   const location = useLocation();
