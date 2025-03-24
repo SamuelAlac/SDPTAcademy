@@ -8,6 +8,19 @@ body{
     background-color: #1B1B1B !important
 }
 
+.hr-line{
+  height: 10px;
+  width: 100%;
+  box-shadow: var(--neu-box-shadow);
+  border-radius: var(--border-radius-neu);
+}
+
+.hr-white-line{
+  height: 5px;
+  width: 100%;
+  background-color: white !important;
+}
+
 .btn:focus, 
 .btn:active, 
 .form-control:focus {

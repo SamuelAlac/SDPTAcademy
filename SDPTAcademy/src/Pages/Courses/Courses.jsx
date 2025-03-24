@@ -4,11 +4,12 @@ import lessonImage from '../../assets/lessonImage.svg'
 import bookIcon from '../../assets/bookIcon.svg'
 import clockIcon from '../../assets/clockIcon.svg'
 import studentsIcon from '../../assets/studentsIcon.svg'
-import starIcon from '../../assets/starIcon.svg'
+import rateIcon from '../../assets/starIcon.svg'
 import cartIcon from '../../assets/cartIcon.svg'
 import searchIcon from '../../assets/searchIcon.svg'
 import courseImage from '../../assets/courseImage.svg'
 import './courses.css'
+import { Link } from 'react-router-dom'
 
 const Courses = () => {
   return (
@@ -30,7 +31,7 @@ const Courses = () => {
 
           <div class="card featured-card-design mb-3 text-white">
               <div class="row g-5">
-                <div class="col-md">
+                <div class="col-md d-sm-flex align items-center">
                   <img src={lessonImage} class="img-fluid rounded-start" alt="..."/>
                 </div>
                 <div class="col-md">
@@ -50,12 +51,14 @@ const Courses = () => {
                         <span className="mx-1 card-text text-light">69 Students</span>
                       </div>
                       <div className="col-md d-flex align-items-center">
-                        <img className='img-fluid' src={starIcon} alt="" />
+                        <img className='img-fluid' src={rateIcon} alt="" />
                         <span className="mx-1 card-text text-light">4.45</span>
                       </div>
                     </div>
 
-                    <h5 class="card-title fw-bold">Advanced Java Tutorial</h5>
+                    <Link className="nav-link" to="/CoursePreview">
+                      <h5 class="h5 card-title fw-bold">Advanced Java Tutorial</h5>                    
+                    </Link>
                     
                     <p class="card-text fs-5">Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.</p>
 
@@ -123,7 +126,7 @@ const Courses = () => {
                         <p className="card-text fw-bold text-white text-center">₱4799<span className='fw-normal'>/1 year</span></p>
                       </div>
                       <div>
-                        <img className='img-fluid' src={starIcon} alt="" />
+                        <img className='img-fluid' src={rateIcon} alt="" />
                         <span className="mx-1 card-text text-white">4.45</span>
                       </div>
                       <div>

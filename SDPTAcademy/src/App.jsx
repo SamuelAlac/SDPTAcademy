@@ -7,6 +7,7 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import Courses from './Pages/Courses/Courses';
 import ProtectedRoutes from './components/Protected/ProtectedRoutes';
 import Login from './Pages/Login/Login';
+import CoursePreview from './Pages/Courses/CoursePreview';
 
 const ScrollToTop = () =>{
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
         <Route path='AboutUs' element={<AboutUs/>}/>
         <Route path='Courses' element={<Courses/>}/>
         <Route path='Login' element={<Login/>}/>
+        <Route path='/CoursePreview' element={<CoursePreview/>}/>
 
         <Route element={<ProtectedRoutes/>}>
           

@@ -8,13 +8,6 @@
     background-repeat: no-repeat;
   }
 
-hr{
-  height: 10px;
-  width: 100%;
-  box-shadow: var(--neu-box-shadow);
-  border-radius: var(--border-radius-neu);
-}
-
 .hoverMe{
   background-color: #1E1E1E;
   border-radius: var(--border-radius-neu);

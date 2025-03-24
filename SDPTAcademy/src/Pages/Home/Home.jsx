@@ -14,7 +14,7 @@ const Home = () => {
         
         <section className="p-5 text-light">
         <h1 className='text-warning text-center py-5'>What is SDPT Academy?</h1>
-        <hr></hr>
+        <hr className='hr-line'></hr>
             <div className="container text-start">
                 <div className="row align-items-center justify-content-evenly">
                   <div className="col-4">
@@ -30,7 +30,7 @@ const Home = () => {
                   </div>
                 </div>
             </div>
-          <hr></hr>
+          <hr className='hr-line'></hr>
         </section>
 
         <section id ="info" className="p-5 text-light">
