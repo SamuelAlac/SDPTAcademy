@@ -2,18 +2,15 @@ import React, { useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
 
-const Login = () => {
-
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [confirmPassword, setConfirmPassword] = useState("");
-const [firstName, setFirstName] = useState("");
-const [lastName, setLastName] = useState("");
-
-
-
 //This is for switching gui between Login GUI and Sign Up GUI
 const Login = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+
     const [isRegistered, setIsRegistered] = useState(true);
 
     const handleChange = () =>{
