@@ -43,7 +43,7 @@ const Navbar = ({className}) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Login">
+                  <Link className="nav-link" to="/Auth">
                     <img className='img-fluid' src={ProfileIcon} alt="" />
                     <p className='mb-0'></p>
                   </Link>

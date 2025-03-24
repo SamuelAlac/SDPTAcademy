@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
-import './login.css'
+import './auth.css'
 import { auth, db } from '../../components/configs/firebase-config'
 import { createUserWithEmailAndPassword, 
     signOut, sendEmailVerification, 
