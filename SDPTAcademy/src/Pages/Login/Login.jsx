@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
-// import { auth, db } from '../../components/configs/firebase'
-// import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
-// import { addDoc, collection, setDoc } from 'firebase/firestore'
+import { auth, db } from '../../components/configs/firebase-config'
+import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 
 const Login = () => {
 
@@ -22,36 +22,37 @@ const Login = () => {
         setIsRegistered(!isRegistered);
     }
 
-    // const handleRegistration = async(e) =>{
-    //     e.preventDefault();
+    const handleRegistration = async(e) =>{
+        e.preventDefault();
 
-    //     if(!firstName || !lastName || !email || !password || !confirmPassword){
-    //         alert("Please input all required field");
-    //         return;
-    //     }
+        try{
 
-    //     if(confirmPassword !== password){
-    //         alert("Password Do not match");
-    //         return;
-    //     }
+            if(!firstName || !lastName || !email || !password || !confirmPassword){
+                alert("Please input all required field");
+                return;
+            }
+    
+            if(confirmPassword !== password){
+                alert("Password Do not match");
+                return;
+            }
 
-    //     try{
-    //         await createUserWithEmailAndPassword(auth,email,password);
-    //         const user = auth.currentUser
+            await createUserWithEmailAndPassword(auth,email,password);
+            const user = auth.currentUser
 
-    //         if(user){
-    //             await setDoc(doc(db, "Users", user.uid),{
-    //                 email: user.email,
-    //                 firstName: firstName,
-    //                 lastName: lastName,
-    //             });
-    //         }
-    //         alert("User Registered Successfully!");
+            if(user){
+                await setDoc(doc(db, "Users", user.uid),{
+                    email: user.email,
+                    firstName: firstName,
+                    lastName: lastName,
+                });
+            }
+            alert("User Registered Successfully!");
 
-    //     }catch(error){
-    //         console.log(error.message);
-    //    }
-    // }
+        }catch(error){
+            console.log(error.message);
+       }
+    }
 
 
   return (
