@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './auth.css'
 import { auth, db } from '../../components/configs/firebase-config'
@@ -28,6 +29,7 @@ const Login = () => {
         setIsRegistered(!isRegistered);
     }
 
+    //For handling user registration
     const handleRegistration = async(e) =>{
         e.preventDefault();
 
@@ -54,10 +56,17 @@ const Login = () => {
                 });
             }
             alert("User Registered Successfully!");
+            //handleChange(); not tested yet xD
 
         }catch(error){
             console.log(error.message);
        }
+    }
+
+    //For handling user login
+    const handleLogin = async () =>{
+        const navigate = useNavigate();
+        navigate("/home");
     }
 
 
@@ -106,7 +115,7 @@ const Login = () => {
 
             {isRegistered &&
             <div className="text-center">
-                <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={""}>LOGIN</button>
+                <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleLogin}>LOGIN</button>
             </div>
             }
 
