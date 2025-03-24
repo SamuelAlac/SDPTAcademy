@@ -2,7 +2,13 @@ import React, { useMemo, useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
 import { auth, db } from '../../components/configs/firebase-config'
-import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, 
+    signOut, sendEmailVerification, 
+    sendPasswordResetEmail, 
+    RecaptchaVerifier,
+    signInWithPhoneNumber,
+    confirmPasswordReset,
+    } from 'firebase/auth'
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 
 const Login = () => {
