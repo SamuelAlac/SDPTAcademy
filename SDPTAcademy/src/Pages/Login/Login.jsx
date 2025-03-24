@@ -4,19 +4,21 @@ import './login.css'
 
 const Login = () => {
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [confirmPassword, setConfirmPassword] = useState("");
+const [firstName, setFirstName] = useState("");
+const [lastName, setLastName] = useState("");
 
-    //This is for switching gui between Login GUI and Sign Up GUI
+
+
+//This is for switching gui between Login GUI and Sign Up GUI
+const Login = () => {
     const [isRegistered, setIsRegistered] = useState(true);
 
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
-    }
-
+}
 
 
   return (
@@ -31,34 +33,29 @@ const Login = () => {
             <>
             <div className="my-md-3">
                 <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
-                <input type="text" className="form-control rounded-5" id ="firstName"
-                onChange={(e)=>setFirstName(e.target.value)}/>
+                <input type="text" className="form-control rounded-5" id ="firstName"/>
             </div>
 
             <div className="my-md-3">
                 <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
-                <input type="text" className="form-control rounded-5" id ="lastName"
-                onChange={(e)=>setLastName(e.target.value)}/>
+                <input type="text" className="form-control rounded-5" id ="lastName"/>
             </div>
             </>
             }
 
             <div className="mb-md-3">
                 <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
-                <input type="email" className="form-control rounded-5" id ="userEmail"
-                onChange={(e)=>setEmail(e.target.value)}/>
+                <input type="email" className="form-control rounded-5" id ="userEmail"/>
             </div>
             <div className="mb-md-3">
                 <label htmlFor="userPassword" className='form-label fw-semibold fs-5'>Password</label>
-                <input type="password" className="form-control rounded-5" id ="userPassword"
-                onChange={(e)=>setPassword(e.target.value)}/>
+                <input type="password" className="form-control rounded-5" id ="userPassword"/>
             </div>
 
             {!isRegistered &&
             <div className="mb-md-3">
                 <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
-                <input type="password" className="form-control rounded-5" id ="userConfirmPassword"
-                onChange={(e)=>setConfirmPassword(e.target.value)}/>
+                <input type="password" className="form-control rounded-5" id ="userConfirmPassword"/>
             </div>
             }
 
