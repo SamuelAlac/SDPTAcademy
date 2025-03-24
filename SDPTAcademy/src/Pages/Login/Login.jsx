@@ -1,21 +1,58 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
+import { auth, db } from '../../components/configs/firebase'
+import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
+import { addDoc, collection, setDoc } from 'firebase/firestore'
 
-//This is for switching gui between Login GUI and Sign Up GUI
 const Login = () => {
 
+    const userCollectionRef = useMemo(() =>collection(db, "Users"),[]);
+
+    //Getting and Setting login credentials
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
+    //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
 
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
-}
+    }
+
+    const handleRegistration = async(e) =>{
+        e.preventDefault();
+
+        if(!firstName || !lastName || !email || !password || !confirmPassword){
+            alert("Please input all required field");
+            return;
+        }
+
+        if(confirmPassword !== password){
+            alert("Password Do not match");
+            return;
+        }
+
+        try{
+            await createUserWithEmailAndPassword(auth,email,password,firstName,lastName);
+            const user = auth.currentUser
+
+            if(user){
+                await addDoc(userCollectionRef, {
+                    email: user.email,
+                    firstName: firstName,
+                    lastName: lastName
+                });
+            }
+            alert("User Registered Successfully!");
+
+        }catch(error){
+            console.log(error.message);
+       }
+    }
 
 
   return (
@@ -30,35 +67,48 @@ const Login = () => {
             <>
             <div className="my-md-3">
                 <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
-                <input type="text" className="form-control rounded-5" id ="firstName"/>
+                <input type="text" className="form-control rounded-5" id ="firstName"
+                onChange={(e)=> setFirstName(e.target.value)}/>
             </div>
 
             <div className="my-md-3">
                 <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
-                <input type="text" className="form-control rounded-5" id ="lastName"/>
+                <input type="text" className="form-control rounded-5" id ="lastName"
+                onChange={(e)=> setLastName(e.target.value)}/>
             </div>
             </>
             }
 
             <div className="mb-md-3">
                 <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
-                <input type="email" className="form-control rounded-5" id ="userEmail"/>
+                <input type="email" className="form-control rounded-5" id ="userEmail"
+                onChange={(e)=> setEmail(e.target.value)}/>
             </div>
             <div className="mb-md-3">
                 <label htmlFor="userPassword" className='form-label fw-semibold fs-5'>Password</label>
-                <input type="password" className="form-control rounded-5" id ="userPassword"/>
+                <input type="password" className="form-control rounded-5" id ="userPassword"
+                onChange={(e)=> setPassword(e.target.value)}/>
             </div>
 
             {!isRegistered &&
             <div className="mb-md-3">
                 <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
-                <input type="password" className="form-control rounded-5" id ="userConfirmPassword"/>
+                <input type="password" className="form-control rounded-5" id ="userConfirmPassword"
+                onChange={(e)=>setConfirmPassword(e.target.value)}/>
             </div>
             }
 
+            {isRegistered &&
             <div className="text-center">
                 <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={""}>LOGIN</button>
             </div>
+            }
+
+            {!isRegistered &&
+            <div className="text-center">
+                <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleRegistration}>SIGN UP</button>
+            </div>
+            }
 
             <div className="text-center mt-md-3">
                 {isRegistered && 
