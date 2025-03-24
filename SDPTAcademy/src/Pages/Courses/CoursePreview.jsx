@@ -42,7 +42,9 @@ const CoursePreview = () => {
                 <p className='lead fs-6 fw-normal mt-2 mb-5'>4.45 Rating</p>
 
                 <ul className="list-group d-flex flex-row">
-                    
+                    <li className="list-group-item bg-transparent border-0"></li>
+                    <li className="list-group-item bg-transparent border-0"></li>
+                    <li className="list-group-item bg-transparent border-0"></li>
                 </ul>
             </div>
         </section>
