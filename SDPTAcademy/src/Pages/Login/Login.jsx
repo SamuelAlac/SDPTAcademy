@@ -1,13 +1,12 @@
 import React, { useMemo, useState } from 'react'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './login.css'
-import { auth, db } from '../../components/configs/firebase'
-import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
-import { addDoc, collection, setDoc } from 'firebase/firestore'
+// import { auth, db } from '../../components/configs/firebase'
+// import { createUserWithEmailAndPassword, signOut } from 'firebase/auth'
+// import { addDoc, collection, setDoc } from 'firebase/firestore'
 
 const Login = () => {
 
-    const userCollectionRef = useMemo(() =>collection(db, "Users"),[]);
 
     //Getting and Setting login credentials
     const [email, setEmail] = useState("");
@@ -18,41 +17,41 @@ const Login = () => {
 
     //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
-
+    
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
     }
 
-    const handleRegistration = async(e) =>{
-        e.preventDefault();
+    // const handleRegistration = async(e) =>{
+    //     e.preventDefault();
 
-        if(!firstName || !lastName || !email || !password || !confirmPassword){
-            alert("Please input all required field");
-            return;
-        }
+    //     if(!firstName || !lastName || !email || !password || !confirmPassword){
+    //         alert("Please input all required field");
+    //         return;
+    //     }
 
-        if(confirmPassword !== password){
-            alert("Password Do not match");
-            return;
-        }
+    //     if(confirmPassword !== password){
+    //         alert("Password Do not match");
+    //         return;
+    //     }
 
-        try{
-            await createUserWithEmailAndPassword(auth,email,password,firstName,lastName);
-            const user = auth.currentUser
+    //     try{
+    //         await createUserWithEmailAndPassword(auth,email,password);
+    //         const user = auth.currentUser
 
-            if(user){
-                await addDoc(userCollectionRef, {
-                    email: user.email,
-                    firstName: firstName,
-                    lastName: lastName
-                });
-            }
-            alert("User Registered Successfully!");
+    //         if(user){
+    //             await setDoc(doc(db, "Users", user.uid),{
+    //                 email: user.email,
+    //                 firstName: firstName,
+    //                 lastName: lastName,
+    //             });
+    //         }
+    //         alert("User Registered Successfully!");
 
-        }catch(error){
-            console.log(error.message);
-       }
-    }
+    //     }catch(error){
+    //         console.log(error.message);
+    //    }
+    // }
 
 
   return (
