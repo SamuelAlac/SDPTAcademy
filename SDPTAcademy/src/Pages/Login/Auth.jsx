@@ -9,6 +9,7 @@ import { createUserWithEmailAndPassword,
     RecaptchaVerifier,
     signInWithPhoneNumber,
     confirmPasswordReset,
+    GoogleAuthProvider,
     } from 'firebase/auth'
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 
@@ -24,7 +25,8 @@ const Auth = () => {
 
     //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
-    
+
+
     
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
