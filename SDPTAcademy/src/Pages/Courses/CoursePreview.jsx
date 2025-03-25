@@ -114,10 +114,9 @@ const CoursePreview = () => {
                             <i class="bi bi-list-ul me-1"></i>Course Playlist
                         </button>
                         </h2>
-                        <div id="info-one" class="accordion-collapse collapse show">
-                        <div class="accordion-body text-white">
-                        <div className="d-flex align-items-center justify-content-around">
-
+                         <div id="info-one" class="accordion-collapse collapse show">
+                            <div class="d-flex justify-content-around accordion-body text-white">
+                             <div className="d-flex align-items-center justify-content-around">
                                 <div className="container">
                                 <h5>Description</h5>
                                     <p className="lead fs-6">
@@ -185,8 +184,8 @@ const CoursePreview = () => {
                                     <div className="container flex-grow">
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
-                                        <div className="d-flex justify-content-between">
-                                            <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipin | Tagalog</p>
+                                        <div className="d-flex justify-content-between text-nowrap">
+                                            <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
                                             <p>1m 35s</p>
                                         </div>
                                     </div>
@@ -214,7 +213,7 @@ const CoursePreview = () => {
                                     <div className="container flex-grow">
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
-                                        <div className="d-flex justify-content-between text-nowrap">
+                                        <div className="d-flex justify-content-between">
                                             <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipin | Tagalog</p>
                                             <p className='text=wrap'>1m 35s</p>
                                         </div>
