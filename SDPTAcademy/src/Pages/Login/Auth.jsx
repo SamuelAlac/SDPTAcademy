@@ -14,6 +14,10 @@ import { createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     } from 'firebase/auth'
 import { addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore'
+import { toast, Toaster } from 'react-hot-toast'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/bootstrap.css'
+
 
 const Auth = () => {
 
@@ -24,6 +28,7 @@ const Auth = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [phone, setPhone] = useState("");
 
     //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
@@ -58,6 +63,7 @@ const Auth = () => {
                     email: user.email,
                     firstName: firstName,
                     lastName: lastName,
+                    phone: phone,
                 });
             }
             alert("User Registered Successfully!");
@@ -76,6 +82,7 @@ const Auth = () => {
             alert("Successfully login")
         }catch(error){
             console.log(error.message)
+            toast.error("Invalid Email or Password");
         }
 
         // const navigate = useNavigate();
@@ -94,8 +101,8 @@ const Auth = () => {
 
   return (
     <div className="container vh-100 d-flex align-items-center justify-content-center text-white">
+        <Toaster/>
         <form className='p-3 container login-container bg-dark rounded-4'>
-
             <legend className='text-center'>
                 <img src={SDPTLogo} alt="" className="img-fluid" />
                 <h3 className="fw-bold d-inline mx-2">SDPT <span className='lead fs-3'>Academy</span></h3>
@@ -132,6 +139,22 @@ const Auth = () => {
                 <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
                 <input type="password" className="form-control rounded-5" id ="userConfirmPassword"
                 onChange={(e)=>setConfirmPassword(e.target.value)}/>
+            </div>
+            }
+
+            {!isRegistered &&
+            <div className="mb-md-3 px-3">
+                <label htmlFor="userPhone" className='form-label fw-semibold fs-5'>Mobile Number</label>
+                <div className="d-flex align-items-center">
+                    <PhoneInput
+                        country={"ph"}
+                        value={phone}
+                        onChange={setPhone}
+                        inputClass="rounded-5 form-control px-6 pe-15 w-100 py-2"
+                        dropdownClass='text-black'
+                    />
+                    <button className="btn bg-warning ms-3 w-25 text-white rounded-5 ">Verify</button>
+                </div>
             </div>
             }
 
