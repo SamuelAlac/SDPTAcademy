@@ -141,10 +141,10 @@ const Auth = () => {
 
             <div className="text-center mt-md-2">
                 {isRegistered && 
-                    <p className="lead text-secondary">Don't have an account?<span className='fsw-medium text-white mx-1' role='button' onClick={handleChange}>Sign up</span></p>                
+                    <p className="lead text-secondary">Don't have an account?<span className='fsw-medium text-white mx-1 text-nowrap' role='button' onClick={handleChange}>Sign up</span></p>                
                 }
                 {!isRegistered &&
-                    <p className="lead text-secondary">Already have an account?<span className='fsw-medium text-white mx-1' role='button' onClick={handleChange}>Sign in</span></p>                
+                    <p className="lead text-secondary">Already have an account?<span className='fsw-medium text-white mx-1 text-nowrap' role='button' onClick={handleChange}>Sign in</span></p>                
                 }
             </div>
 
