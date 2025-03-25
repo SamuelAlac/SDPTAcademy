@@ -42,7 +42,7 @@ const Home = () => {
                     <div className="card-body text-start p-5">
                       <img className='img-fluid' src={googleTranslate} alt="" />
 
-                      <h3 className='card-title mb-3 text-end text-warning'>Your Own Language</h3>
+                      <h3 className='card-title mb-3 text-end text-warning fw-bold'>Your Own Language</h3>
 
                       <p className='card-text text-start pb-3'>Learn different programming languages through the use of our Filipino Language which is Tagalog. </p>
                     </div>
@@ -53,7 +53,7 @@ const Home = () => {
                     <div className="card-body text-start p-5">
                       <img className='img-fluid' src={googleTranslate} alt="" />
 
-                      <h3 className='card-title mb-3 text-end text-warning'>Advanced Tutorial</h3>
+                      <h3 className='card-title mb-3 text-end text-warning fw-bold'>Advanced Tutorial</h3>
 
                       <p className='card-text text-start pb-3'>Purchase Advanced Tutorial to skyrocket your learning char haha. Note: Basic Tutorial are up in SDPT Solution’s YT Channel.. </p>
                     </div>
