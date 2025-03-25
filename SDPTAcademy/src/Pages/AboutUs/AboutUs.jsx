@@ -15,20 +15,20 @@ const AboutUs = () => {
             </div>
 
             <div className="col-md text-center text-md-end">
-              <p className="lead fw-bold letter-spacing">Passionate</p>
-              <p className="letter-spacing lead">
+              <p className="lead fw-bold letter-spacing fs-3">Passionate</p>
+              <p className="letter-spacing lead fs-3">
                 <span className="fw-bold">Individuals</span> that aims
               </p>
-              <p className="letter-spacing lead">
+              <p className="letter-spacing lead fs-3">
                 to <span className="fw-bold">teach Filipinos</span>
               </p>
-              <p className="letter-spacing lead">
+              <p className="letter-spacing lead fs-3">
                 <span className="fw-bold">Programming</span> in our
               </p>
-              <p className="letter-spacing lead">
+              <p className="letter-spacing lead fs-3">
                 <span className="fw-bold">own language</span> and.
               </p>
-              <p className="letter-spacing lead fw-bold">Glorify God</p>
+              <p className="letter-spacing lead fw-bold fs-3">Glorify God</p>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@ const AboutUs = () => {
           <div className="row text-center align-items-end justify-content-between">
             <div className="col-md-6 text-start">
               <div className="card-design card p-3 my-5 text-white">
-                <div className="card-body">
+                <div className="card-body p-4">
                   <p className="fw-bold fs-3">Lets meet our</p>
 
                   <h3 className="card-title mb-3 fw-bold fs-2 text-warning">
@@ -62,11 +62,11 @@ const AboutUs = () => {
                 <div className="card-body">
                   <hr className="text-white"></hr>
 
-                  <p className="card-title mb-3 fw-bold text-warning">
+                  <p className="card-title mb-3 fw-bold text-warning fs-4">
                     Our Team
                   </p>
 
-                  <p className="card-text">
+                  <p className="card-text fs-5">
                     A <span className="fw-bold">Duo</span> fueled by{" "}
                     <span className="fw-bold">God and their passion</span> to
                     produce{" "}
@@ -86,7 +86,7 @@ const AboutUs = () => {
 
       <section className="p-5 text-white mt-5">
         <div className="container">
-          <h2 className="text-warning fw-bold text-center mt-5">
+          <h2 className="text-warning fw-bold fs-1 text-center mt-5">
             SDPT Academy Team
           </h2>
           <hr></hr>
@@ -109,7 +109,7 @@ const AboutUs = () => {
                 of students' inquiries.
               </p>
               <hr></hr>
-              <p>@spdtEren</p>
+              <p className="text-end">@spdtEren</p>
             </div>
           </div>
         </div>

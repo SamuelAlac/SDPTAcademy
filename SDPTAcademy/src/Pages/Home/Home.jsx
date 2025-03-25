@@ -13,16 +13,16 @@ const Home = () => {
         </section>
         
         <section className="p-5 text-light">
-        <h1 className='text-warning text-center py-5'>What is SDPT Academy?</h1>
+        <h1 className='text-warning text-center py-5 fw-bold'>What is SDPT Academy?</h1>
         <hr className='hr-line'></hr>
-            <div className="container text-start">
+            <div className="container text-start py-4">
                 <div className="row align-items-center justify-content-evenly">
                   <div className="col-4">
                       <img className ='img-fluid' src={SDPTLogo} alt="" />
                   </div>
 
                   <div className="col-md">
-                      <p className='lead'>SDPT Academy is an online platform where in teaches Programming Languages through the use of our own native language - Tagalog.
+                      <p className='lead text-indent text-justify'>SDPT Academy is an online platform where in teaches Programming Languages through the use of our own native language - Tagalog.
                     It aims to teach Filipino Programmers who wants to be developers.
                       Ginaya ko lang intro heheh AHHAHAHAHAH bsta ganto ganyan.
                       It is own by SDPT Solutions a Youtube Channel that teachers about Programming.
@@ -34,12 +34,12 @@ const Home = () => {
         </section>
 
         <section id ="info" className="p-5 text-light">
-            <h1 className='text-warning flex-wrap text-center'>What can I use SDPT Academy for?</h1>
-            <div className='container'>
+            <h1 className='text-warning flex-wrap text-center fw-semibold'>What can I use SDPT Academy for?</h1>
+            <div className="container">
               <div className="row text-center py-5 g-3">
-                <div className="col-md">
+                <div className="col-md mx-3">
                   <div className="hoverMe card text-white pt-1">
-                    <div className="card-body text-start">
+                    <div className="card-body text-start p-5">
                       <img className='img-fluid' src={googleTranslate} alt="" />
 
                       <h3 className='card-title mb-3 text-end text-warning'>Your Own Language</h3>
@@ -48,9 +48,9 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md">
+                <div className="col-md mx-3">
                 <div className="hoverMe card text-white pt-1">
-                    <div className="card-body text-start">
+                    <div className="card-body text-start p-5">
                       <img className='img-fluid' src={googleTranslate} alt="" />
 
                       <h3 className='card-title mb-3 text-end text-warning'>Advanced Tutorial</h3>
@@ -63,7 +63,7 @@ const Home = () => {
             </div>
         </section>
 
-        <footer className="p-5 text-white d-flex align-items-end">
+        <footer className="p-1 text-white d-flex align-items-center">
             <div className="container">
             <div id="reviews" class="carousel slide">
               <div class="carousel-indicators">
@@ -75,12 +75,12 @@ const Home = () => {
                 <div class="carousel-item active">
                   <div className="cards-wrapper text-center">
                   <div className="card text-white p-3">
-                    <div className="card-body">
+                    <div className="card-body p-5">
                       <div className="h1 mb-3">
-                        <p className='lead text-warning'>“Sobrang daling gamitin ng SDPT Academy! Would recommend this.”</p>
+                        <p className='fs-3 text-warning'>“Sobrang daling gamitin ng SDPT Academy! Would recommend this.”</p>
                       </div>
 
-                      <h3 className='card-title text-warning pt-5'>Carmela Isabela</h3>
+                      <div className='card-text fw-bold pt-2'>Carmela Isabela</div>
 
                       <p className='card-text pb-3'>Student</p>
                     </div>
@@ -90,12 +90,12 @@ const Home = () => {
                 <div class="carousel-item">
                   <div className="cards-wrapper text-center">
                   <div className="card text-white p-3">
-                    <div className="card-body">
+                    <div className="card-body p-5">
                       <div className="h1 mb-3">
-                        <p className='lead text-warning'>“Sobrang daling gamitin ng SDPT Academy! Would recommend this.”</p>
+                        <p className='fs-3 text-warning'>“Sobrang daling gamitin ng SDPT Academy! Would recommend this.”</p>
                       </div>
 
-                      <h3 className='card-title text-warning pt-5'>Carmela Isabela</h3>
+                      <div className='card-text fw-bold pt-2'>Carmela Isabela</div>
 
                       <p className='card-text pb-3'>Student</p>
                     </div>
@@ -105,12 +105,12 @@ const Home = () => {
                 <div class="carousel-item">
                   <div className="cards-wrapper text-center">
                   <div className="card text-white p-3">
-                    <div className="card-body">
+                    <div className="card-body p-5">
                       <div className="h1 mb-3">
-                        <p className='lead text-warning'>“Sobrang daling gamitin ng SDPT Academy! Would recommend this.”</p>
+                        <p className='fs-3 text-warning'>“Sobrang daling gamitin ng SDPT Academy! Would recommend this.”</p>
                       </div>
 
-                      <h3 className='card-title text-warning pt-5'>Carmela Isabela</h3>
+                      <div className='card-text fw-bold pt-2'>Carmela Isabela</div>
 
                       <p className='card-text pb-3'>Student</p>
                     </div>

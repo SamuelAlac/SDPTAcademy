@@ -5,7 +5,8 @@
 }
   
 body{
-    background-color: #1B1B1B !important
+    background-color: #1B1B1B !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .hr-line{
@@ -32,3 +33,11 @@ body{
 .form-control::placeholder {
     color: white !important; /* Customize for Bootstrap */
   }
+
+.text-indent{
+  text-indent: 50px !important;
+}
+
+.text-justify{
+  text-align: justify !important;
+}

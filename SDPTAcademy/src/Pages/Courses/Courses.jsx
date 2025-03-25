@@ -16,13 +16,13 @@ const Courses = () => {
     <div>
         <Navbar className="bg-black border-bottom rounded-bottom-4 border-effect"/>
         <section className="fixed-layout p-5">
-        <div className="container">
+        <div className="container w-50">
             <div class="btn-group d-flex flex-fill justify-content-center" role="group" aria-label="Basic radio toggle button group">
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" defaultChecked/>
-                <label class="btn btn-outline-warning text-white fw-semibold text-nowrap  text-center" for="btnradio1">Buy Courses</label>
+                <label class="btn btn-outline-warning text-white fw-semibold text-nowrap  text-center m-1" for="btnradio1">Buy Courses</label>
 
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"/>
-                <label class="btn btn-outline-warning text-white fw-semi text-nowrap text-center" for="btnradio2">Owned Courses</label>
+                <label class="btn btn-outline-warning text-white fw-semibold text-nowrap text-center m-1" for="btnradio2">Owned Courses</label>
             </div>
         </div>
 
@@ -72,12 +72,11 @@ const Courses = () => {
         </div>
         </section>
 
-        <section className="p-5">
-          <div className="container">
-
+        <section className="container p-5 w-50">
+          <div className="container w-75">
             <div className="d-md-flex align-items-center justify-content-center">
               <div className="search-design input-group rounded-5">
-                <img src={searchIcon} alt="" className="search-design img-fluid p-2" />
+                <img src={searchIcon} alt="" className="search-design img-fluid p-2 ps-3" />
                 <input type="text" placeholder = "Search Courses" class="form-control search-design text-white border-0 p-3" aria-label="Text input with dropdown button"/>
               </div>
 
