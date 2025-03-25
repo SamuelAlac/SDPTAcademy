@@ -92,14 +92,14 @@ const Courses = () => {
           </div>
         </section>
 
-        <section className="p-5 vh-100">
+      <section className="p-5 vh-100">
           <div className="container mb-5">
             <h3 className='text-white'>Courses</h3>
           </div>
 
-          <div className="container">
-            <div className="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-2 text-center text-white">
-              <div className="col-md">
+        <div className="container">
+          <div className="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-2 text-center text-white">
+            <div className="col-md">
               <div class="card course-card-design rounded-4">
                 <img src={courseImage} class="card-img-top img-fluid" alt="..."/>
                 <div class="card-body">
@@ -132,17 +132,16 @@ const Courses = () => {
                         <button className="btn btn-warning btn-md rounded-5 text-white d-lg-flex align-items-center justify-content-center"data-bs-toggle = "modal" data-bs-target="#purchase">
                         <img src={cartIcon} alt="" className="img-fluid px-1" />Purchase</button>
                       </div>
-                    </div>
+                  </div>
                 </div>
               </div>
-
-              </div>
-              <div className="col">123</div>
-              <div className="col">123</div>
-              <div className="col">123</div>
             </div>
+              <div className="col">123</div>
+              <div className="col">123</div>
+              <div className="col">123</div>
           </div>
-        </section>
+        </div>
+      </section>
     </div>
   )
 }
