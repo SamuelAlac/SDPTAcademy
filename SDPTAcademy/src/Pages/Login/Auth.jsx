@@ -6,7 +6,6 @@ import { auth, db, googleAuthProvider } from '../../components/configs/firebase-
 import { createUserWithEmailAndPassword, 
     signOut, sendEmailVerification, 
     sendPasswordResetEmail, 
-    RecaptchaVerifier,
     signInWithPhoneNumber,
     confirmPasswordReset,
     GoogleAuthProvider,
@@ -17,6 +16,7 @@ import { addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore'
 import { toast, Toaster } from 'react-hot-toast'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/bootstrap.css'
+import { RecaptchaVerifier } from "firebase/auth";
 
 
 const Auth = () => {
@@ -29,11 +29,72 @@ const Auth = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
+    const [otp, setOtp] = useState("");
+    const [showOTP, setShowOTP] = useState(false);
+    const [confirmationResult, setConfirmationResult] = useState(null);
 
     //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
 
 
+    const onCaptchVerify = () => {
+        if (!auth) {
+            console.error("Firebase auth is not initialized.");
+            return;
+        }
+    
+        if (!window.recaptchaVerifier) {
+            console.log("Initializing reCAPTCHA...");
+            window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+                'size': 'invisible',
+                'callback': (response) => {
+                    console.log("reCAPTCHA solved, response:", response);
+                },
+                'expired-callback': () => {
+                    console.log("reCAPTCHA expired, please solve it again.");
+                }
+            });  // ✅ Ensure auth is passed as the third argument
+        }
+    };
+
+      const onSignup = async () => {
+        onCaptchVerify(); // Ensures reCAPTCHA is initialized
+    
+        if (!window.recaptchaVerifier) {
+            console.error("reCAPTCHA is not initialized.");
+            return;
+        }
+    
+        const appVerifier = window.recaptchaVerifier;
+        const formattedPhone = "+639708567193";
+    
+        console.log("Attempting to send OTP to:", formattedPhone);
+        signInWithPhoneNumber(auth, formattedPhone, appVerifier)
+            .then((confirmationResult) => {
+                window.confirmationResult = confirmationResult;
+                setShowOTP(true);
+                toast.success("OTP sent successfully!");
+            })
+            .catch((error) => {
+                console.error("OTP Error:", error.code, error.message);
+                if (error.code === 'auth/too-many-requests') {
+                    toast.error("Too many requests. Please try again later.");
+                } else {
+                    toast.error("Failed to send OTP. Please try again.");
+                }
+            });
+        }
+    
+    const onOTPVerify = async () => {
+        window.confirmationResult
+        .confirm(otp)
+        .then(async (res) => {
+            console.log("OTP verified successfully:", res);
+        })
+        .catch((err) => {
+            console.error("Failed to verify OTP:", err);
+        });
+    }
     
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
@@ -153,11 +214,24 @@ const Auth = () => {
                         inputClass="rounded-5 form-control px-6 pe-15 w-100 py-2"
                         dropdownClass='text-black'
                     />
-                    <button className="btn bg-warning ms-3 w-25 text-white rounded-5 ">Verify</button>
+                    <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
                 </div>
             </div>
             }
 
+            {showOTP && (
+                    <div className="mb-3">
+                        <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter OTP"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                        />
+                        <button type="button" className="btn btn-success w-100 mt-2" onClick={onOTPVerify}>Submit OTP</button>
+                    </div>
+                    )}
+            <div id="recaptcha-container"></div>
             {isRegistered &&
             <div className="text-center">
                 <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleLogin}>LOGIN</button>
@@ -188,5 +262,3 @@ const Auth = () => {
 }
 
 export default Auth
-
-
