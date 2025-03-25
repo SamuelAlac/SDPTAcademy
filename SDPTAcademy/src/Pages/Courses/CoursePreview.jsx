@@ -169,7 +169,7 @@ const CoursePreview = () => {
                 </div>
             </div>
 
-            {/* <div className='container'>
+            <div className='container'>
                 <div class="accordion" id="info-two-accordion">
                     <div className="accordion-item accordion-container">
                         <h2 className="accordion-header">
@@ -225,7 +225,7 @@ const CoursePreview = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
             </div>
             </div>

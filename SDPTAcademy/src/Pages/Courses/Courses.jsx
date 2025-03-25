@@ -15,7 +15,7 @@ const Courses = () => {
   return (
     <div>
         <Navbar className="bg-black border-bottom rounded-bottom-4 border-effect"/>
-        <section className="fixed-layout p-5">
+        <section className="fixed-layout">
         <div className="container w-50">
             <div class="btn-group d-flex flex-fill justify-content-center" role="group" aria-label="Basic radio toggle button group">
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" defaultChecked/>
@@ -72,7 +72,7 @@ const Courses = () => {
         </div>
         </section>
 
-        <section className="container p-5 w-50">
+        <section className="container w-50">
           <div className="container w-75">
             <div className="d-md-flex align-items-center justify-content-center">
               <div className="search-design input-group rounded-5">
