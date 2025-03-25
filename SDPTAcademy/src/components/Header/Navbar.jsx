@@ -12,9 +12,9 @@ const Navbar = ({className}) => {
   return (
 
     <nav className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top`}>
-        <div className="container-fluid px-3 d-flex align-items-center custom-margin">
+        <div className="container-fluid px-2 d-flex align-items-center">
             <a href="#" className='navbar-brand d-flex align-items-center'>
-                <img src={SDPTLogo} className='img-fluid pe-3' alt="" />
+                <img src={SDPTLogo} className='img-fluid pe-2' alt="" />
                 <span className='lead fw-bold'>SDPT</span> Academy
             </a>
 

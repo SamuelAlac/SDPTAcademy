@@ -96,7 +96,7 @@ const CoursePreview = () => {
   
         </section>
 
-        <section className="p-5">
+        <section>
             <div className="container vh-100">
                 <div className='d-flex align-items-center gap-2'>
                     <hr className='hr-line'/>
@@ -104,81 +104,87 @@ const CoursePreview = () => {
                     <hr className='hr-line'/>
                 </div>
 
-            <div className="container pt-5 mt-5">
-                <div className="accordion according-flush" id="info">
-                    <div className="accordion-item accordion-container text-white">
-                        <h2 className="accordion-header d-flex align-items-center">
-                            <button className="accordion-button accordion-container text-white collapsed fs-4 fw-semibold" type = "button"
-                            data-bs-toggle="collapse" data-bs-target="#info-one">
-                            <i class="bi bi-list-ul me-1"></i>Course Playlist</button>
+            <div className="container pt-5 pt- mt-5 d-flex flex-column gap-4">
+
+            <div className='container'>
+                <div class="accordion" id="info-one-accordion">
+                    <div class="accordion-item accordion-container">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button accordion-container text-white fs-4 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#info-one">
+                            <i class="bi bi-list-ul me-1"></i>Course Playlist
+                        </button>
                         </h2>
+                        <div id="info-one" class="accordion-collapse collapse show">
+                        <div class="accordion-body text-white">
+                        <div className="d-flex align-items-center justify-content-around">
 
-                        <div id="info-one" className="accordion-collapse collapse" data-bs-parent="#info">
-                            <div className="accordion-body">
-                                <div className="d-flex align-items-center justify-content-around">
-                                    <div className='container'>
-                                        <h5>Description</h5>
-                                        <div className="container">
-                                            <p className="lead fs-6">
-                                            Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
-                                            Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
-                                            Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.
-                                            </p>
+                                <div className="container">
+                                <h5>Description</h5>
+                                    <p className="lead fs-6">
+                                        Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
+                                        Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
+                                        Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.
+                                    </p>
 
-                                            <div className='d-md-flex align-items-center mt-4 gap-md-3 gap-2 d-flex flex-sm-row flex-column-reverse'>
-                                                <div className='d-flex flex-row align-items-center'>
-                                                <p className="fw-bold text-center my-0 mx-2 fs-5">₱1,299</p>
-                                                <span className='fw-light mt-1'>/1 year</span>
+                                        <div className='d-md-flex align-items-center mt-4 gap-md-3 gap-2 d-flex flex-sm-row flex-column-reverse'>
+                                            <div className='d-flex flex-row align-items-center'>
+                                                    <p className="fw-bold text-center my-0 mx-2 fs-5">₱1,299</p>
+                                                    <span className='fw-light mt-1'>/1 year</span>
                                                 </div>
 
-                                                <button className="btn btn-warning btn-md rounded-5 text-white fw-medium d-lg-flex align-items-center justify-content-center"data-bs-toggle = "modal" data-bs-target="#purchase">
-                                                <img src={cartIcon} alt="" className="img-fluid"/><span className='px-2'>Purchase</span></button>
+                                                    <button className="btn btn-warning btn-md rounded-5 text-white fw-medium d-lg-flex align-items-center justify-content-center"data-bs-toggle = "modal" data-bs-target="#purchase">
+                                                    <img src={cartIcon} alt="" className="img-fluid"/><span className='px-2'>Purchase</span></button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='container'>
-                                        <h5 className="fw-bold text-warning">Table of Contents</h5>
-                                        <ul className="list-group bg-black">
-                                            <li className="list-group-item bg-transparent border-0">
-                                                <img className='img-fluid' src={playButtonIcon} alt="" />
-                                                <span className="card-text mx-1 text-light">Variables & Datatypes</span>
-                                            </li>
-                                            <li className="list-group-item bg-transparent border-0">
+
+                                        <div className='container'>
+                                            <h5 className="fw-bold text-warning">Table of Contents</h5>
+                                    <ul className="list-group bg-black">
+                                        <li className="list-group-item bg-transparent border-0">
+                                            <img className='img-fluid' src={playButtonIcon} alt="" />
+                                            <span className="card-text mx-1 text-light">Variables & Datatypes</span>
+                                        </li>
+                                        <li className="list-group-item bg-transparent border-0">
                                             <img className='img-fluid' src={playButtonIcon} alt="" />
                                             <span className="card-text mx-1 text-light">Variables & Datatypes</span>                                                
-                                            </li>
-                                            <li className="list-group-item bg-transparent border-0">
+                                        </li>
+                                        <li className="list-group-item bg-transparent border-0">
                                             <img className='img-fluid' src={playButtonIcon} alt="" />
                                             <span className="card-text mx-1 text-light">Variables & Datatypes</span>
-                                            </li>
-                                            <li className="list-group-item bg-transparent border-0">
+                                        </li>
+                                        <li className="list-group-item bg-transparent border-0">
                                             <img className='img-fluid' src={playButtonIcon} alt="" />
                                             <span className="card-text mx-1 text-light">Variables & Datatypes</span>
-                                            </li>
-                                            <li className="list-group-item bg-transparent border-0">
+                                        </li>
+                                        <li className="list-group-item bg-transparent border-0">
                                             <img className='img-fluid' src={playButtonIcon} alt="" />
                                             <span className="card-text mx-1 text-light">Variables & Datatypes</span>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="accordion-item">
-                        <h2 className="accordion-header d-flex align-items-center">
-                            <button className="accordion-button accordion-container text-white collapsed fs-4 fw-semibold" type = "button"
-                            data-bs-toggle="collapse" data-bs-target="#info-two">
-                            <img src={coursePreqIcon} alt="" className="img-fluid me-1"/>Course Pre-requisites</button>
+                    </div>  
+                </div>
+            </div>
+
+            {/* <div className='container'>
+                <div class="accordion" id="info-two-accordion">
+                    <div className="accordion-item accordion-container">
+                        <h2 className="accordion-header">
+                            <button className="accordion-button accordion-container text-white fs-4 fw-semibold" type = 'button' data-bs-toggle="collapse"
+                            data-bs-target="#info-two" >
+                                <img src={coursePreqIcon} alt="" className="img-fluid me-1"/>Course Pre-requisites
+                            </button>
                         </h2>
 
-                        <div id="info-two" className="accordion-collapse collapse" data-bs-parent="#info">
-                            <div className="accordion-body">
-                                <div className="d-flex justify-content-around">
+                        <div id="info-two" className="accordion-collapse collapse" data-bs-parent="#info-two-accordion">
+                            <div className="accordion-body text-white">
+                            <div className="d-flex justify-content-around">
                                     <div className="container flex-grow">
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
-                                        <p>HALPPPPPPPPPPPPPPPPPPPPPPPPPPPP</p>
                                         <div className="d-flex justify-content-between">
                                             <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipin | Tagalog</p>
                                             <p>1m 35s</p>
@@ -189,11 +195,39 @@ const CoursePreview = () => {
                             </div>
                         </div>
                     </div>
-                    
-                    <div className="accordion-item"></div>
                 </div>
             </div>
 
+            <div className='container'>
+                <div class="accordion" id="info-three-accordion">
+                    <div className="accordion-item accordion-container">
+                        <h2 className="accordion-header">
+                            <button className="accordion-button accordion-container text-white fs-4 fw-semibold" type = 'button' data-bs-toggle="collapse"
+                            data-bs-target="#info-three">
+                                <img src={coursePreqIcon} alt="" className="img-fluid me-1"/>Course Pre-requisites
+                            </button>
+                        </h2>
+
+                        <div id="info-three" className="accordion-collapse collapse" data-bs-parent="#info-three-accordion">
+                            <div className="accordion-body text-white">
+                            <div className="d-flex justify-content-around">
+                                    <div className="container flex-grow">
+                                        <p>Basic Java</p>
+                                        <p>ReactJS</p>
+                                        <div className="d-flex justify-content-between">
+                                            <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipin | Tagalog</p>
+                                            <p>1m 35s</p>
+                                        </div>
+                                    </div>
+                                    <div className="container">123</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+
+            </div>
             </div>
         </section>
     </div>
