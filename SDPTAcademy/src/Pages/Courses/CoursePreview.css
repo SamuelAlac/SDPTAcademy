@@ -1,3 +1,11 @@
+@import '../../neumorphism.module.css';
+
 .course-preview-container{
     max-width: 800px;
+}
+
+.course-playlist-container{
+    background-color: #1E1E1E !important;
+    box-shadow: var(--neu-box-shadow);
+    border-radius: 15px;
 }

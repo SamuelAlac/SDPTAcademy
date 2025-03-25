@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './auth.css'
 import { auth, db } from '../../components/configs/firebase-config'
@@ -12,7 +12,7 @@ import { createUserWithEmailAndPassword,
     } from 'firebase/auth'
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 
-const Login = () => {
+const Auth = () => {
 
 
     //Getting and Setting login credentials
@@ -24,6 +24,7 @@ const Login = () => {
 
     //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
+    
     
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
@@ -64,9 +65,10 @@ const Login = () => {
     }
 
     //For handling user login
+    //WIP
     const handleLogin = async () =>{
         const navigate = useNavigate();
-        navigate("/home");
+        navigate(<PhoneAuth/>);
     }
 
 
@@ -138,4 +140,18 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Auth
+
+
+const PhoneAuth = () => {
+  return (
+    <div className='container vh-100 d-flex align-items-center justify-content-center text-white'>
+        <form className='p-3 container login-container bg-dark rounded-4'>
+            <legend className='text-center'>
+                <img src={SDPTLogo} alt="" className="img-fluid" />
+                <h3 className="fw-bold d-inline mx-2">SDPT <span className='lead fs-3'>Academy</span></h3>
+            </legend>
+        </form>
+    </div>
+  )
+}
