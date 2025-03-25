@@ -22,7 +22,6 @@ const ScrollToTop = () =>{
 }
 
 
-
 function App() {
 //temp lng to di ko alam paano lagay tong ScrollToTop sa router dun sa main T^T..
   return (
