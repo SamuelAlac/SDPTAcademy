@@ -167,15 +167,3 @@ const Auth = () => {
 export default Auth
 
 
-const PhoneAuth = () => {
-  return (
-    <div className='container vh-100 d-flex align-items-center justify-content-center text-white'>
-        <form className='p-3 container login-container bg-dark rounded-4'>
-            <legend className='text-center'>
-                <img src={SDPTLogo} alt="" className="img-fluid" />
-                <h3 className="fw-bold d-inline mx-2">SDPT <span className='lead fs-3'>Academy</span></h3>
-            </legend>
-        </form>
-    </div>
-  )
-}
