@@ -13,3 +13,19 @@
 .accordion-container{
     background-color: #1B1B1B !important
 }
+
+.responsive-text {
+    font-size: 11px; /* Default font size for small screens */
+  }
+  
+  @media (min-width: 768px) {
+    .responsive-text {
+      font-size: 13px; /* Font size for medium screens and above */
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .responsive-text {
+      font-size: 16px; /* Font size for large screens */
+    }
+  }
