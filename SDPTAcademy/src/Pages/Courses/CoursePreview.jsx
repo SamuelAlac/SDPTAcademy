@@ -185,11 +185,27 @@ const CoursePreview = () => {
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
                                         <div className="row">
-                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
+                                            <p className='col-8 text-truncate'
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top"
+                                                title="Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog">
+                                                Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
                                             <p className='col-1 text-nowrap'>1m 35s</p>
                                         </div>
                                         <div className="row">
-                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalogggggg</p>
+                                            <p className='col-8 text-truncate'
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top"
+                                                title="Java Tutorial #2: Variables & Datatypes | Concatenation | Eclipse | Filipino | Tagalog">
+                                                Java Tutorial #2: Variables & Datatypes | Concatenation | Eclipse | Filipino | Tagalog</p>
+                                            <p className='col-1 text-nowrap'>1m 35s</p>
+                                        </div>
+                                        <div className="row">
+                                            <p className='col-8 text-truncate'
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top"
+                                                title="Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalogggggg">
+                                                Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalogggggg</p>
                                             <p className='col-1 text-nowrap'>1m 35s</p>
                                         </div>
                                     </div>
