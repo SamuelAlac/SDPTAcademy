@@ -94,15 +94,15 @@ const AboutUs = () => {
 
         <div className="container d-flex align-items-center justify-content-center">
           <div className="row align-items-center justify-content-center">
-            <div className="col-md-5 text-center">
+            <div className="col-md-3 text-center">
               <div className="card-design card p-3 my-5 text-white">
                 <p>co-founder image</p>
               </div>
-              <h5 className="fw-bold">Jean Eren Fajardo</h5>
+              <h6 className="fw-bold">Jean Eren Fajardo</h6>
               <p>Co-Founder</p>
             </div>
-            <div className="col-md-5">
-              <p className="text-break">
+            <div className="col-md-4">
+              <p className="text-lg text-indent text-justify">
                 Uses his{" "}
                 <span className="fw-bold text-warning">Logical Thinking</span>{" "}
                 to provide Programming Tutorial contents that will cater a lot
@@ -118,8 +118,8 @@ const AboutUs = () => {
 
         <div className="container d-flex align-items-center justify-content-center">
           <div className="row align-items-center justify-content-center">
-            <div className="col-md-5">
-              <p className="text-break">
+            <div className="col-md-4">
+              <p className="text-lg text-indent text-justify">
                 Uses her{" "}
                 <span className="fw-bold text-warning">Creative Thinking</span>{" "}
                 to provide innovative User interfaces, Quality Video Content
@@ -128,11 +128,11 @@ const AboutUs = () => {
               <hr></hr>
               <p>@spdtCarmela</p>
             </div>
-            <div className="col-md-5 text-center">
+            <div className="col-md-3 text-center">
               <div className="card-design card p-3 my-5 text-white">
                 <p>co-founder image</p>
               </div>
-              <h5 className="fw-bold">Carmela Isabelle Mendoza</h5>
+              <h6 className="fw-bold">Carmela Isabelle Mendoza</h6>
               <p>Co-Founder</p>
             </div>
           </div>
@@ -152,6 +152,32 @@ const AboutUs = () => {
             <i>Proverbs 2:6</i>
           </p>
           <hr></hr>
+        </div>
+
+        <hr className="container d-flex flex-column align-items-center justify-content-center"></hr>
+
+        <div className="container d-flex flex-column align-items-center justify-content-center">
+          <h5 className="text-warning my-5">Our Vision</h5>
+          <p className="col-6 lead text-indent text-justify">
+            At SDPT Academy, we envision a future where every Filipino,
+            regardless of background or circumstances, has the opportunity to
+            thrive in the digital age. Our mission is to empower individuals
+            with the skills and knowsledge needed to excel in the world of
+            programming, all while celeberating our rich Filipino culture and
+            heritage.
+          </p>
+
+          <br />
+
+          <h5 className="text-warning my-5">Our Mission</h5>
+          <p className="col-6 lead  text-indent text-justify">
+            At SDPT Academy, our mission is to advance proficiency in
+            programming through instructions in Tagalog. We priortize delivering
+            high-quality education that is accessible to every Filipino, with a
+            focus on culture and languange. We aim to serve as a bridge towards
+            a brighter future, where every student possesses the capability and
+            knowledge required to succeed in the field of technology.
+          </p>
         </div>
       </section>
     </div>
