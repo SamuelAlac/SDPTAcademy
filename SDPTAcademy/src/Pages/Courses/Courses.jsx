@@ -92,7 +92,7 @@ const Courses = () => {
           </div>
         </section>
 
-        <section className="p-5 vh-100">
+        <section className="vh-100">
           <div className="container mb-5">
             <h3 className='text-white'>Courses</h3>
           </div>

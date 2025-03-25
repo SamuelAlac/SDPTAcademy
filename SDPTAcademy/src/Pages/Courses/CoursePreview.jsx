@@ -18,7 +18,7 @@ const CoursePreview = () => {
     <div>
         <Navbar className="bg-black border-bottom rounded-bottom-4 border-effect"/>
 
-        <section className="fixed-layout p-5 text-center text-white">
+        <section className="fixed-layout text-center text-white">
             <div className="container course-preview-container d-flex flex-column align-items-center justify-content-center">
                 <hr className='hr-white-line'></hr>
 
@@ -30,7 +30,7 @@ const CoursePreview = () => {
                     Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.
                 </p>
 
-                <div className="row row-cols-3 row-cols-lg-5 g-4 align-items-center justify-content-center mb-4">
+                <div className="row row-cols-5 g-4 align-items-center justify-content-center mb-4">
                     <div className="col-md">
                     <img className='img-fluid' src={rateIcon} alt="" />
                     </div>
@@ -98,13 +98,13 @@ const CoursePreview = () => {
 
         <section>
             <div className="container vh-100">
+
+            <div className="container pt-5 pt- mt-5 d-flex flex-column gap-4">
                 <div className='d-flex align-items-center gap-2'>
                     <hr className='hr-line'/>
                     <h1 className='text-nowrap text-white'>Course Preview</h1>
                     <hr className='hr-line'/>
                 </div>
-
-            <div className="container pt-5 pt- mt-5 d-flex flex-column gap-4">
 
             <div className='container'>
                 <div class="accordion" id="info-one-accordion">
