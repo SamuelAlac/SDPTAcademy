@@ -11,8 +11,9 @@ import { createUserWithEmailAndPassword,
     confirmPasswordReset,
     GoogleAuthProvider,
     signInWithPopup,
+    signInWithEmailAndPassword,
     } from 'firebase/auth'
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
+import { addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore'
 
 const Auth = () => {
 
@@ -70,8 +71,15 @@ const Auth = () => {
     //For handling user login
     //WIP
     const handleLogin = async () =>{
-        const navigate = useNavigate();
-        navigate(<PhoneAuth/>);
+        try{
+            await signInWithEmailAndPassword(auth, email, password);
+            alert("Successfully login")
+        }catch(error){
+            console.log(error.message)
+        }
+
+        // const navigate = useNavigate();
+        // navigate(<PhoneAuth/>);
     }
 
     //For handling google login
