@@ -112,8 +112,27 @@ const CoursePreview = () => {
 
                         <div id="info-one" className="accordion-collapse collapse" data-bs-parent="#info">
                             <div className="accordion-body">
-                                <div className="row row-cols-1 row-cols-md-2 g-2 align-items-center">
-
+                                <div className="d-flex align-items-center justify-content-around">
+                                    <div className='container'>
+                                        <h5>Description</h5>
+                                        <div className="container">
+                                            <p className="lead fs-6">
+                                            Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
+                                            Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
+                                            Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className='container'>
+                                        <h5 className="fw-bold text-warning">Table of Contents</h5>
+                                        <ul className="list-group">
+                                            <li className="list-group-item bg-transparent border-0"></li>
+                                            <li className="list-group-item bg-transparent border-0"></li>
+                                            <li className="list-group-item bg-transparent border-0"></li>
+                                            <li className="list-group-item bg-transparent border-0"></li>
+                                            <li className="list-group-item bg-transparent border-0"></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
