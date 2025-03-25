@@ -185,7 +185,7 @@ const CoursePreview = () => {
                                     <div className="container flex-grow">
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
-                                        <div className="d-flex justify-content-between text-nowrap">
+                                        <div className="d-flex justify-content-between">
                                             <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
                                             <p>1m 35s</p>
                                         </div>
@@ -214,7 +214,7 @@ const CoursePreview = () => {
                                     <div className="container flex-grow">
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
-                                        <div className="d-flex justify-content-between text-nowrap">
+                                        <div className="d-flex justify-content-between">
                                             <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipin | Tagalog</p>
                                             <p>1m 35s</p>
                                         </div>
