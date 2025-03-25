@@ -115,7 +115,7 @@ const CoursePreview = () => {
                         </button>
                         </h2>
                          <div id="info-one" class="accordion-collapse collapse show">
-                            <div class="d-flex justify-content-around accordion-body text-white">
+                            <div class="d-md-flex justify-content-around accordion-body text-white">
                              <div className="d-flex align-items-center justify-content-around">
                                 <div className="container">
                                 <h5>Description</h5>
@@ -184,12 +184,16 @@ const CoursePreview = () => {
                                     <div className="container flex-grow">
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
-                                        <div className="d-flex justify-content-between text-nowrap">
-                                            <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
-                                            <p>1m 35s</p>
+                                        <div className="row">
+                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
+                                            <p className='col-1 text-nowrap'>1m 35s</p>
+                                        </div>
+                                        <div className="row">
+                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalogggggg</p>
+                                            <p className='col-1 text-nowrap'>1m 35s</p>
                                         </div>
                                     </div>
-                                    <div className="container">123</div>
+                                    {/* button placeholder bfr */}
                                 </div>
                             </div>
                         </div>
@@ -210,15 +214,19 @@ const CoursePreview = () => {
                         <div id="info-three" className="accordion-collapse collapse" data-bs-parent="#info-three-accordion">
                             <div className="accordion-body text-white">
                             <div className="d-flex justify-content-around">
-                                    <div className="container flex-grow">
+                                    <div className="container">
                                         <p>Basic Java</p>
                                         <p>ReactJS</p>
-                                        <div className="d-flex justify-content-between">
-                                            <p>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipin | Tagalog</p>
-                                            <p className='text=wrap'>1m 35s</p>
+                                        <div className="row">
+                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
+                                            <p className='col-1 text-nowrap'>1m 35s</p>
+                                        </div>
+                                        <div className="row">
+                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalogggggg</p>
+                                            <p className='col-1 text-nowrap'>1m 35s</p>
                                         </div>
                                     </div>
-                                    <div className="container">123</div>
+                                    {/* button placeholder bfr */}
                                 </div>
                             </div>
                         </div>
