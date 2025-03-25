@@ -1,7 +1,11 @@
 @import '../../neumorphism.module.css';
 
+body{
+    height: 1000px;
+}
+
 .login-container{
-    max-width: 500px !important;
+    max-width: 600px !important;
     background-color: #1E1E1E !important;
     box-shadow: var(--neu-box-shadow) !important;
     border-color: var(--neu-border-color) !important;
