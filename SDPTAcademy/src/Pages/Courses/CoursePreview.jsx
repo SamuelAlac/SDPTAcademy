@@ -114,10 +114,9 @@ const CoursePreview = () => {
                             <i class="bi bi-list-ul me-1"></i>Course Playlist
                         </button>
                         </h2>
-                        <div id="info-one" class="accordion-collapse collapse show">
-                        <div class="accordion-body text-white">
-                        <div className="d-flex align-items-center justify-content-around">
-
+                         <div id="info-one" class="accordion-collapse collapse show">
+                            <div class="d-flex justify-content-around accordion-body text-white">
+                             <div className="d-flex align-items-center justify-content-around">
                                 <div className="container">
                                 <h5>Description</h5>
                                     <p className="lead fs-6">
