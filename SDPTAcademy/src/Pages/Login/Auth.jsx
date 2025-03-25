@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 import { useNavigate, Link } from "react-router-dom"
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './auth.css'
-import { auth, db } from '../../components/configs/firebase-config'
+import { auth, db, googleAuthProvider } from '../../components/configs/firebase-config'
 import { createUserWithEmailAndPassword, 
     signOut, sendEmailVerification, 
     sendPasswordResetEmail, 
@@ -10,6 +10,7 @@ import { createUserWithEmailAndPassword,
     signInWithPhoneNumber,
     confirmPasswordReset,
     GoogleAuthProvider,
+    signInWithPopup,
     } from 'firebase/auth'
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 
@@ -73,6 +74,15 @@ const Auth = () => {
         navigate(<PhoneAuth/>);
     }
 
+    //For handling google login
+    const handleGoogleSignIn = async () =>{
+        try{
+            await signInWithPopup(auth, googleAuthProvider)
+        }catch(error){
+            console.log(error.message);
+        }
+    }
+
 
   return (
     <div className="container vh-100 d-flex align-items-center justify-content-center text-white">
@@ -84,13 +94,13 @@ const Auth = () => {
             </legend>
             {!isRegistered &&
             <>
-            <div className="my-md-3">
+            <div className="my-md-3 px-3">
                 <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
                 <input type="text" className="form-control rounded-5" id ="firstName"
                 onChange={(e)=> setFirstName(e.target.value)}/>
             </div>
 
-            <div className="my-md-3">
+            <div className="my-md-3 px-3">
                 <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
                 <input type="text" className="form-control rounded-5" id ="lastName"
                 onChange={(e)=> setLastName(e.target.value)}/>
@@ -98,19 +108,19 @@ const Auth = () => {
             </>
             }
 
-            <div className="mb-md-3">
+            <div className="mb-md-3 px-3">
                 <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
                 <input type="email" className="form-control rounded-5" id ="userEmail"
                 onChange={(e)=> setEmail(e.target.value)}/>
             </div>
-            <div className="mb-md-3">
+            <div className="mb-md-3 px-3">
                 <label htmlFor="userPassword" className='form-label fw-semibold fs-5'>Password</label>
                 <input type="password" className="form-control rounded-5" id ="userPassword"
                 onChange={(e)=> setPassword(e.target.value)}/>
             </div>
 
             {!isRegistered &&
-            <div className="mb-md-3">
+            <div className="mb-md-3 px-3">
                 <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
                 <input type="password" className="form-control rounded-5" id ="userConfirmPassword"
                 onChange={(e)=>setConfirmPassword(e.target.value)}/>
@@ -129,7 +139,7 @@ const Auth = () => {
             </div>
             }
 
-            <div className="text-center mt-md-3">
+            <div className="text-center mt-md-2">
                 {isRegistered && 
                     <p className="lead text-secondary">Don't have an account?<span className='fsw-medium text-white mx-1' role='button' onClick={handleChange}>Sign up</span></p>                
                 }
@@ -137,7 +147,11 @@ const Auth = () => {
                     <p className="lead text-secondary">Already have an account?<span className='fsw-medium text-white mx-1' role='button' onClick={handleChange}>Sign in</span></p>                
                 }
             </div>
+
+            <h1 className="lead fw-bold text-center" role='button' onClick={handleGoogleSignIn}><i class="bi bi-google text"></i></h1>
         </form>
+
+        
     </div>
   )
 }
