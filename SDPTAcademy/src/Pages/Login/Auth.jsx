@@ -45,7 +45,7 @@ const Auth = () => {
     const onCaptchVerify = () => {
         if (!window.recaptchaVerifier) {
             window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
-                size: "invinsible",
+                size: "normal",
                 callback: (response) => {
                 console.log("reCAPTCHA verified!", response);
                 },
@@ -89,6 +89,8 @@ const Auth = () => {
         .then(async (res) => {
             setIsVerified(true);
             console.log("OTP verified successfully:", res);
+            toast.success("Verified Successfully")
+            setShowOTP(false);
         })
         .catch((err) => {
             console.error("Failed to verify OTP:", err);
@@ -171,7 +173,6 @@ const Auth = () => {
   return (
     <div className="container vh-100 d-flex align-items-center justify-content-center text-white">
         <Toaster toastOptions={{ duration: 4000 }} />
-        <div id="recaptcha-container"></div>
         <form className='p-3 container login-container bg-dark rounded-4'>
             <legend className='text-center'>
                 <img src={SDPTLogo} alt="" className="img-fluid" />
@@ -252,7 +253,7 @@ const Auth = () => {
                     {!isRegistered &&
                     <div className="mb-md-3 px-3">
                         <label htmlFor="userPhone" className='form-label fw-semibold fs-5'>Mobile Number</label>
-                        <div className="d-flex align-items-center justify-content-center">
+                        <div className="d-flex align-items-center justify-content-center mb-2">
                             <PhoneInput
                                 country={"ph"}
                                 value={phone}
@@ -264,6 +265,7 @@ const Auth = () => {
                             />
                             <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
                         </div>
+                        <div id="recaptcha-container"></div>
                     </div>
                     }
 
