@@ -130,7 +130,6 @@ const CoursePreview = () => {
                                                     <p className="fw-bold text-center my-0 mx-2 fs-5">₱1,299</p>
                                                     <span className='fw-light mt-1'>/1 year</span>
                                                 </div>
-
                                                     <button className="btn btn-warning btn-md rounded-5 text-white fw-medium d-lg-flex align-items-center justify-content-center"data-bs-toggle = "modal" data-bs-target="#purchase">
                                                     <img src={cartIcon} alt="" className="img-fluid"/><span className='px-2'>Purchase</span></button>
                                                 </div>
