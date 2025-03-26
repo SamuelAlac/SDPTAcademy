@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../../components/Header/Navbar'
 import lessonImage from '../../assets/lessonImage.svg'
 import bookIcon from '../../assets/bookIcon.svg'
@@ -12,6 +12,13 @@ import './courses.css'
 import { Link } from 'react-router-dom'
 
 const Courses = () => {
+
+  const [courseName, setCourseName] = useState("");
+  const [courseDescription, setCourseDescription] = useState("");
+  const [coursePrice, setCoursePrice] = useState(0);
+  const [coursePurchaseDuration, setCoursePurchaseDuration] = useState(0);
+  
+
   return (
     <div>
         <Navbar className="bg-black border-bottom rounded-bottom-4 border-effect"/>
