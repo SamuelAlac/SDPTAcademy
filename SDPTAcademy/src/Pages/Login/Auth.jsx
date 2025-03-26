@@ -30,7 +30,7 @@ const Auth = () => {
     const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
     const [otp, setOtp] = useState("");
-    const [showOTP, setShowOTP] = useState(true);
+    const [showOTP, setShowOTP] = useState(false);
     const [confirmationResult, setConfirmationResult] = useState(null);
     const [disableSend, setDisableSend] = useState(false); 
     const [isVerified, setIsVerified] = useState(false);
