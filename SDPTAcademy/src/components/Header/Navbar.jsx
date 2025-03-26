@@ -19,8 +19,8 @@ const Navbar = ({ className }) => {
       <Toaster toastOptions={{ duration: 4000 }} /> {/* Add this */}
       <nav className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top`}>
         <div className="container-fluid px-3 d-flex align-items-center">
-            <a href="#" className='navbar-brand d-flex align-items-center'> 
-                <img src={SDPTLogo} className='img-fluid pe-2' alt="" />
+            <a href="/" className='navbar-brand d-flex align-items-center'> 
+                <img src={SDPTLogo} className='img-fluid pe-2' alt=""  />
                 <span className='lead fw-bold'>SDPT</span> Academy
             </a>
 
