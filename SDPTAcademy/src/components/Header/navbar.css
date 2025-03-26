@@ -24,3 +24,13 @@
     height: 40px;
     border-radius: 60%;
   }
+
+  .navbar.hidden {
+    transform: translateY(-100%); /* Slide the navbar out of view */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar.visible {
+    transform: translateY(0); /* Slide the navbar back into view */
+    transition: transform 0.3s ease-in-out;
+  }

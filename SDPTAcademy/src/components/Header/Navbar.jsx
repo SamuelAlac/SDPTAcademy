@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import HomeIcon from '../../assets/Home Icon.svg'
@@ -7,17 +7,48 @@ import CoursesIcon from '../../assets/Courses Icon.svg'
 import ProfileIcon from '../../assets/Account Icon.svg'
 import './navbar.css'
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../configs/firebase-config"; // Adjust the import path
+import { auth } from "../configs/firebase-config"; 
+import { toast, Toaster } from 'react-hot-toast';
 
 
-const Navbar = ({className}) => {
+const Navbar = ({ className }) => {
   const [user] = useAuthState(auth);
-  return (
+  const [showNavbar, setShowNavbar] = useState(true); // State to toggle navbar visibility
+  const [lastScrollY, setLastScrollY] = useState(0); // Track the last scroll position
 
-    <nav className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top`}>
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setShowNavbar(false);
+      } else {
+        // Scrolling up
+        setShowNavbar(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
+  return (
+    <>
+      <Toaster toastOptions={{ duration: 4000 }} /> {/* Add this */}
+      <nav
+        className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top ${
+          showNavbar ? 'visible' : 'hidden'
+        }`}
+      >
         <div className="container-fluid px-3 d-flex align-items-center">
-            <a href="#" className='navbar-brand d-flex align-items-center'>
-                <img src={SDPTLogo} className='img-fluid pe-2' alt="" />
+            <a href="/" className='navbar-brand d-flex align-items-center'> 
+                <img src={SDPTLogo} className='img-fluid pe-2' alt=""  />
                 <span className='lead fw-bold'>SDPT</span> Academy
             </a>
 
@@ -67,10 +98,16 @@ const Navbar = ({className}) => {
                           </Link>
                         </li>
                         <li>
-                          <button className="dropdown-item text-white" onClick={() => auth.signOut()}>
-                            Logout
-                          </button>
-                        </li>
+                        <button
+                          className="dropdown-item text-white"
+                          onClick={() => {
+                            auth.signOut();
+                            toast.success('You have been logged out successfully!');
+                          }}
+                        >
+                          Logout
+                        </button>
+                      </li>
                       </>
                     ) : (
                       <li>
@@ -84,8 +121,9 @@ const Navbar = ({className}) => {
               </ul>
             </div>
         </div>
-    </nav>
-  )
-}
+      </nav>
+    </>
+  );
+};
 
 export default Navbar

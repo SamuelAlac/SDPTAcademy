@@ -30,7 +30,6 @@
 }
 
 .section-background::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -46,7 +45,7 @@
 
 @media (max-width: 768px) {
   .section-background::before {
-    background-size: contain;
+    background-size: cover;
   }
 }
 
