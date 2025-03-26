@@ -141,22 +141,18 @@ const Auth = () => {
 
     //For handling user login
     //WIP
-    const handleLogin = async (e) =>{
+    const handleLogin = async (e) => {
         e.preventDefault();
-        try{
-            await signInWithEmailAndPassword(auth, email, password);
-            alert("Successfully login")
-            toast.success('Successfully logged in!');
-            console.log(email);
-            navigate('/'); 
-        }catch(error){
-            console.log(error.message)
-            toast.error("Invalid Email or Password");
+        try {
+          await signInWithEmailAndPassword(auth, email, password);
+          toast.success('Successfully logged in!');
+          console.log('Successfully logged in:', email);
+          navigate('/'); 
+        } catch (error) {
+          console.error('Login error:', error.message);
+          toast.error('Invalid Email or Password');
         }
-
-        // const navigate = useNavigate();
-        // navigate(<PhoneAuth/>);
-    }
+      };
 
     //For handling google login
     const handleGoogleSignIn = async () =>{
@@ -252,7 +248,8 @@ const Auth = () => {
 
                     {isRegistered &&
                     <div className="text-center">
-                        <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleLogin}>LOGIN</button>
+                        
+                        <button type="button" className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleLogin}>LOGIN</button>
                     </div>
                     }
 
