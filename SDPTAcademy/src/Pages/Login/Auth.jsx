@@ -141,7 +141,8 @@ const Auth = () => {
 
     //For handling user login
     //WIP
-    const handleLogin = async () =>{
+    const handleLogin = async (e) =>{
+        e.preventDefault();
         try{
             await signInWithEmailAndPassword(auth, email, password);
             alert("Successfully login")
