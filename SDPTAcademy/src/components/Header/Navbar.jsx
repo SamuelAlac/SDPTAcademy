@@ -46,13 +46,12 @@ const Navbar = ({className}) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Auth">
-                      {user ? (
-                      <img src={user.photoURL} alt="" className="profile-pic" />
+                    <Link className="nav-link" to="/Auth">
+                    {user ? (
+                      <img src={user?.photoURL || ProfileIcon} alt="User Profile" className="profile-pic" />
                     ) : (
-                      <img className='img-fluid' src={ProfileIcon} alt="" />
-                    )}       
-                    <p className='mb-0'></p>
+                      <img className="img-fluid" src={ProfileIcon} alt="Default Profile" />
+                    )}
                   </Link>
                 </li>
               </ul>
