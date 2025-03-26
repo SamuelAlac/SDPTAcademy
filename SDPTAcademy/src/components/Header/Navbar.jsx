@@ -8,15 +8,18 @@ import ProfileIcon from '../../assets/Account Icon.svg'
 import './navbar.css'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../configs/firebase-config"; // Adjust the import path
+import { toast, Toaster } from 'react-hot-toast';
 
 
-const Navbar = ({className}) => {
+const Navbar = ({ className }) => {
   const [user] = useAuthState(auth);
-  return (
 
-    <nav className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top`}>
+  return (
+    <>
+      <Toaster toastOptions={{ duration: 4000 }} /> {/* Add this */}
+      <nav className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top`}>
         <div className="container-fluid px-3 d-flex align-items-center">
-            <a href="#" className='navbar-brand d-flex align-items-center'>
+            <a href="#" className='navbar-brand d-flex align-items-center'> 
                 <img src={SDPTLogo} className='img-fluid pe-2' alt="" />
                 <span className='lead fw-bold'>SDPT</span> Academy
             </a>
@@ -67,10 +70,16 @@ const Navbar = ({className}) => {
                           </Link>
                         </li>
                         <li>
-                          <button className="dropdown-item text-white" onClick={() => auth.signOut()}>
-                            Logout
-                          </button>
-                        </li>
+                        <button
+                          className="dropdown-item text-white"
+                          onClick={() => {
+                            auth.signOut();
+                            toast.success('You have been logged out successfully!');
+                          }}
+                        >
+                          Logout
+                        </button>
+                      </li>
                       </>
                     ) : (
                       <li>
@@ -84,8 +93,9 @@ const Navbar = ({className}) => {
               </ul>
             </div>
         </div>
-    </nav>
-  )
-}
+      </nav>
+    </>
+  );
+};
 
 export default Navbar
