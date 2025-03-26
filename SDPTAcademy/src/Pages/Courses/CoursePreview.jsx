@@ -22,7 +22,7 @@ const CoursePreview = () => {
             <div className="container course-preview-container d-flex flex-column align-items-center justify-content-center">
                 <hr className='hr-white-line'></hr>
 
-                <h3 className='text-nowrap'>Advanced Java Course</h3>
+                <h3 className='text-nowra '>Advanced Java Course</h3>
                 <p className='lead fw-semibold fs-6 mb-5'>by SDPT Solutions</p>
 
                 <p className='mb-4'>Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
@@ -118,8 +118,8 @@ const CoursePreview = () => {
                             <div class="d-md-flex justify-content-around accordion-body text-white">
                              <div className="d-flex align-items-center justify-content-around">
                                 <div className="container">
-                                <h5>Description</h5>
-                                    <p className="lead fs-6">
+                                <h5 className='responsive-heading'>Description</h5>
+                                    <p className="responsive-text">
                                         Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
                                         Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
                                         Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.
@@ -182,14 +182,14 @@ const CoursePreview = () => {
                             <div className="accordion-body text-white">
                             <div className="d-flex justify-content-around">
                                     <div className="container flex-grow">
-                                        <p>Basic Java</p>
-                                        <p>ReactJS</p>
+                                        <p className='responsive-text'>Basic Java</p>
+                                        <p className='responsive-text'>ReactJS</p>
                                    
                                         <div className="row">
                                             <p className='col-8 text-truncate responsive-text'
                                                 data-bs-toggle="tooltip"
                                                 data-bs-placement="top"
-                                                title="Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog">
+                                                title="Java Tutorial #1: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog">
                                                 Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
                                             <p className='col-1 text-nowrap responsive-text'>1m 35s</p>
                                         </div>
