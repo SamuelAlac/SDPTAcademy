@@ -30,7 +30,7 @@ const Auth = () => {
     const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
     const [otp, setOtp] = useState("");
-    const [showOTP, setShowOTP] = useState(false);
+    const [showOTP, setShowOTP] = useState(true);
     const [confirmationResult, setConfirmationResult] = useState(null);
     const [disableSend, setDisableSend] = useState(false); 
     const [isVerified, setIsVerified] = useState(false);
@@ -80,6 +80,7 @@ const Auth = () => {
         }
     }
     
+    //for handling OTP Verification
     const onOTPVerify = () => {
         window.confirmationResult
         .confirm(otp)
@@ -136,8 +137,6 @@ const Auth = () => {
             console.log(error.message);
        }
     }
-
-    //for handling OTP Verification
     
 
     //For handling user login
@@ -166,66 +165,15 @@ const Auth = () => {
 
   return (
     <div className="container vh-100 d-flex align-items-center justify-content-center text-white">
-        <Toaster/>
+        <Toaster toastOptions={{ duration: 4000 }} />
+        <div id="recaptcha-container"></div>
         <form className='p-3 container login-container bg-dark rounded-4'>
             <legend className='text-center'>
                 <img src={SDPTLogo} alt="" className="img-fluid" />
                 <h3 className="fw-bold d-inline mx-2">SDPT <span className='lead fs-3'>Academy</span></h3>
             </legend>
-            {!isRegistered &&
+            {showOTP ? (
                 <>
-                <div className="my-md-3 px-3">
-                    <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
-                    <input type="text" className="form-control rounded-5" id ="firstName"
-                    onChange={(e)=> setFirstName(e.target.value)}/>
-                </div>
-
-                <div className="my-md-3 px-3">
-                    <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
-                    <input type="text" className="form-control rounded-5" id ="lastName"
-                    onChange={(e)=> setLastName(e.target.value)}/>
-                </div>
-                </>
-            }
-
-            <div className="mb-md-3 px-3">
-                <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
-                <input type="email" className="form-control rounded-5" id ="userEmail"
-                onChange={(e)=> setEmail(e.target.value)}/>
-            </div>
-            <div className="mb-md-3 px-3">
-                <label htmlFor="userPassword" className='form-label fw-semibold fs-5'>Password</label>
-                <input type="password" className="form-control rounded-5" id ="userPassword"
-                onChange={(e)=> setPassword(e.target.value)}/>
-            </div>
-
-            {!isRegistered &&
-            <div className="mb-md-3 px-3">
-                <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
-                <input type="password" className="form-control rounded-5" id ="userConfirmPassword"
-                onChange={(e)=>setConfirmPassword(e.target.value)}/>
-            </div>
-            }
-
-            {!isRegistered &&
-            <div className="mb-md-3 px-3">
-                <label htmlFor="userPhone" className='form-label fw-semibold fs-5'>Mobile Number</label>
-                <div className="d-flex align-items-center justify-content-center">
-                    <PhoneInput
-                        country={"ph"}
-                        value={phone}
-                        onChange={setPhone}
-                        autoFocus='false'
-                        inputClass='border-white rounded-5'
-                        containerClass='rounded-5 form-control px-6 ps-1 w-100 py-0 border-white'
-                        buttonClass='m-1 bg-white rounded-5 border-white'
-                    />
-                    <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
-                </div>
-            </div>
-            }
-
-            {showOTP && (
                     <div className="mb-3">
                         <input
                         type="text"
@@ -236,30 +184,90 @@ const Auth = () => {
                         />
                         <button type="button" className="btn btn-success w-100 mt-2" onClick={onOTPVerify}>Submit OTP</button>
                     </div>
-                    )}
-            <div id="recaptcha-container"></div>
-            {isRegistered &&
-            <div className="text-center">
-                <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleLogin}>LOGIN</button>
-            </div>
-            }
+                </>) 
+                
+                : 
+                
+                (
+                <>
+                    {!isRegistered &&
+                    <>
+                    <div className="my-md-3 px-3">
+                        <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
+                        <input type="text" className="form-control rounded-5" id ="firstName"
+                        onChange={(e)=> setFirstName(e.target.value)}/>
+                    </div>
 
-            {!isRegistered &&
-            <div className="text-center">
-                <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleRegistration}>SIGN UP</button>
-            </div>
-            }
+                    <div className="my-md-3 px-3">
+                        <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
+                        <input type="text" className="form-control rounded-5" id ="lastName"
+                        onChange={(e)=> setLastName(e.target.value)}/>
+                    </div>
+                    </>
+                    }
 
-            <div className="text-center mt-md-2">
-                {isRegistered && 
-                    <p className="lead text-secondary">Don't have an account?<span className='fsw-medium text-white mx-1 text-nowrap' role='button' onClick={handleChange}>Sign up</span></p>                
-                }
-                {!isRegistered &&
-                    <p className="lead text-secondary">Already have an account?<span className='fsw-medium text-white mx-1 text-nowrap' role='button' onClick={handleChange}>Sign in</span></p>                
-                }
-            </div>
+                    <div className="mb-md-3 px-3">
+                        <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
+                        <input type="email" className="form-control rounded-5" id ="userEmail"
+                        onChange={(e)=> setEmail(e.target.value)}/>
+                    </div>
+                    <div className="mb-md-3 px-3">
+                        <label htmlFor="userPassword" className='form-label fw-semibold fs-5'>Password</label>
+                        <input type="password" className="form-control rounded-5" id ="userPassword"
+                        onChange={(e)=> setPassword(e.target.value)}/>
+                    </div>
 
-            <h1 className="lead fw-bold text-center" role='button' onClick={handleGoogleSignIn}><i class="bi bi-google text"></i></h1>
+                    {!isRegistered &&
+                    <div className="mb-md-3 px-3">
+                        <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
+                        <input type="password" className="form-control rounded-5" id ="userConfirmPassword"
+                        onChange={(e)=>setConfirmPassword(e.target.value)}/>
+                    </div>
+                    }
+
+                    {!isRegistered &&
+                    <div className="mb-md-3 px-3">
+                        <label htmlFor="userPhone" className='form-label fw-semibold fs-5'>Mobile Number</label>
+                        <div className="d-flex align-items-center justify-content-center">
+                            <PhoneInput
+                                country={"ph"}
+                                value={phone}
+                                onChange={setPhone}
+                                autoFocus='false'
+                                inputClass='border-white rounded-5'
+                                containerClass='rounded-5 form-control px-6 ps-1 w-100 py-0 border-white'
+                                buttonClass='m-1 bg-white rounded-5 border-white'
+                            />
+                            <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
+                        </div>
+                    </div>
+                    }
+
+                    {isRegistered &&
+                    <div className="text-center">
+                        <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleLogin}>LOGIN</button>
+                    </div>
+                    }
+
+                    {!isRegistered &&
+                    <div className="text-center">
+                        <button className="btnLogin w-100 btn btn-warning btn-md mt-3 rounded-5 text-white" onClick={handleRegistration}>SIGN UP</button>
+                    </div>
+                    }
+
+                    <div className="text-center mt-md-2">
+                        {isRegistered && 
+                            <p className="lead text-secondary">Don't have an account?<span className='fsw-medium text-white mx-1 text-nowrap' role='button' onClick={handleChange}>Sign up</span></p>                
+                        }
+                        {!isRegistered &&
+                            <p className="lead text-secondary">Already have an account?<span className='fsw-medium text-white mx-1 text-nowrap' role='button' onClick={handleChange}>Sign in</span></p>                
+                        }
+                    </div>
+
+                    <h1 className="lead fw-bold text-center" role='button' onClick={handleGoogleSignIn}><i class="bi bi-google text"></i></h1>
+                    
+                </>
+                )}
         </form>
 
         
