@@ -33,69 +33,9 @@ const Auth = () => {
     const [showOTP, setShowOTP] = useState(false);
     const [confirmationResult, setConfirmationResult] = useState(null);
 
+    
     //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
-
-
-    const onCaptchVerify = () => {
-        if (!auth) {
-            console.error("Firebase auth is not initialized.");
-            return;
-        }
-    
-        if (!window.recaptchaVerifier) {
-            console.log("Initializing reCAPTCHA...");
-            window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-                'size': 'invisible',
-                'callback': (response) => {
-                    console.log("reCAPTCHA solved, response:", response);
-                },
-                'expired-callback': () => {
-                    console.log("reCAPTCHA expired, please solve it again.");
-                }
-            });  // ✅ Ensure auth is passed as the third argument
-        }
-    };
-
-      const onSignup = async () => {
-        onCaptchVerify(); // Ensures reCAPTCHA is initialized
-    
-        if (!window.recaptchaVerifier) {
-            console.error("reCAPTCHA is not initialized.");
-            return;
-        }
-    
-        const appVerifier = window.recaptchaVerifier;
-        const formattedPhone = "+639708567193";
-    
-        console.log("Attempting to send OTP to:", formattedPhone);
-        signInWithPhoneNumber(auth, formattedPhone, appVerifier)
-            .then((confirmationResult) => {
-                window.confirmationResult = confirmationResult;
-                setShowOTP(true);
-                toast.success("OTP sent successfully!");
-            })
-            .catch((error) => {
-                console.error("OTP Error:", error.code, error.message);
-                if (error.code === 'auth/too-many-requests') {
-                    toast.error("Too many requests. Please try again later.");
-                } else {
-                    toast.error("Failed to send OTP. Please try again.");
-                }
-            });
-        }
-    
-    const onOTPVerify = async () => {
-        window.confirmationResult
-        .confirm(otp)
-        .then(async (res) => {
-            console.log("OTP verified successfully:", res);
-        })
-        .catch((err) => {
-            console.error("Failed to verify OTP:", err);
-        });
-    }
-    
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
     }
@@ -134,6 +74,9 @@ const Auth = () => {
             console.log(error.message);
        }
     }
+
+    //for handling OTP Verification
+    
 
     //For handling user login
     //WIP
@@ -214,7 +157,7 @@ const Auth = () => {
                         inputClass="rounded-5 form-control px-6 pe-15 w-100 py-2"
                         dropdownClass='text-black'
                     />
-                    <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
+                    <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={"onSignUp"}>Verify</button>
                 </div>
             </div>
             }
@@ -228,7 +171,7 @@ const Auth = () => {
                         value={otp}
                         onChange={(e) => setOtp(e.target.value)}
                         />
-                        <button type="button" className="btn btn-success w-100 mt-2" onClick={onOTPVerify}>Submit OTP</button>
+                        <button type="button" className="btn btn-success w-100 mt-2" onClick={"onOTPVerify"}>Submit OTP</button>
                     </div>
                     )}
             <div id="recaptcha-container"></div>
