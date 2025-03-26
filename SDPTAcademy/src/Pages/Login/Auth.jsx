@@ -147,7 +147,8 @@ const Auth = () => {
             await signInWithEmailAndPassword(auth, email, password);
             alert("Successfully login")
             toast.success('Successfully logged in!');
-            navigate('../Home/Home.jsx'); 
+            console.log(email);
+            navigate('/'); 
         }catch(error){
             console.log(error.message)
             toast.error("Invalid Email or Password");
@@ -162,7 +163,7 @@ const Auth = () => {
         try{
             await signInWithPopup(auth, googleAuthProvider)
             toast.success('Successfully logged in with Google!');
-         navigate('../Home/Home.jsx'); 
+            navigate('/'); 
         }catch(error){
             console.log(error.message);
             toast.error('Google Sign-In failed');
