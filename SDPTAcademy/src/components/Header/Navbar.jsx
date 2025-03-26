@@ -6,9 +6,12 @@ import AboutUsIcon from '../../assets/AboutUs Icon.svg'
 import CoursesIcon from '../../assets/Courses Icon.svg'
 import ProfileIcon from '../../assets/Account Icon.svg'
 import './navbar.css'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../configs/firebase-config"; // Adjust the import path
 
 
 const Navbar = ({className}) => {
+  const [user] = useAuthState(auth);
   return (
 
     <nav className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top`}>
@@ -44,7 +47,11 @@ const Navbar = ({className}) => {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/Auth">
-                    <img className='img-fluid' src={ProfileIcon} alt="" />
+                      {user ? (
+                      <img src={user.photoURL} alt="Profile" className="profile-pic" />
+                    ) : (
+                      <img className='img-fluid' src={ProfileIcon} alt="" />
+                    )}       
                     <p className='mb-0'></p>
                   </Link>
                 </li>
