@@ -76,7 +76,7 @@ const Auth = () => {
         } catch (error) {
             console.error("Error during phone authentication:", error);
         }finally {
-            setTimeout(() => setDisableSend(false), 20000); // Re-enable after 5 seconds
+            setTimeout(() => setDisableSend(false), 10000); // Re-enable after 5 seconds
         }
     }
     
@@ -115,6 +115,7 @@ const Auth = () => {
 
             if(!isVerified){
                 toast.error("Please verify your account nigga")
+                return;
             }
 
             await createUserWithEmailAndPassword(auth,email,password,phone);
