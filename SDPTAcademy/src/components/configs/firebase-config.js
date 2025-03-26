@@ -29,17 +29,6 @@ export const googleAuthProvider = new GoogleAuthProvider(app);
 
 export { signInWithPhoneNumber };
 
-onAuthStateChanged (auth, (user) => {
-  console.log(user);
-  if (user) {
-    updateUserProfile(user);
-    console.log('User Logged In', user);
-    const uid =user.uid;
-    return uid;
-  } else {
-    console.log('User Logged Out');
-  }
-});
 
 export function useAuth() {
   const [user, setUser] = useState(null);
