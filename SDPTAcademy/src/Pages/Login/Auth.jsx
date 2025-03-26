@@ -32,10 +32,67 @@ const Auth = () => {
     const [otp, setOtp] = useState("");
     const [showOTP, setShowOTP] = useState(false);
     const [confirmationResult, setConfirmationResult] = useState(null);
+    const [disableSend, setDisableSend] = useState(false); 
+    const [isVerified, setIsVerified] = useState(false);
 
-    
     //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
+
+
+
+    const onCaptchVerify = () => {
+        if (!window.recaptchaVerifier) {
+            window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+                size: "invinsible",
+                callback: (response) => {
+                console.log("reCAPTCHA verified!", response);
+                },
+                "expired-callback": () => {
+                console.error("reCAPTCHA expired. Please refresh and try again.");
+                },
+            });
+            }
+    };
+
+    const onSignup = async () => {
+        if (disableSend) return; // Prevent multiple clicks
+        setDisableSend(true);
+    
+
+        try {
+            onCaptchVerify();
+            const appVerifier = window.recaptchaVerifier;
+            const formatPh = "+" + phone;
+
+            console.log("Sending OTP to:", formatPh);
+
+            const confirmationResult = await signInWithPhoneNumber(auth, formatPh, appVerifier);
+            window.confirmationResult = confirmationResult;
+
+            console.log("OTP sent successfully!");
+
+            setShowOTP(true);
+            toast.success("OTP sent successfully!");
+        } catch (error) {
+            console.error("Error during phone authentication:", error);
+        }finally {
+            setTimeout(() => setDisableSend(false), 20000); // Re-enable after 5 seconds
+        }
+    }
+    
+    const onOTPVerify = () => {
+        window.confirmationResult
+        .confirm(otp)
+        .then(async (res) => {
+            setIsVerified(true);
+            console.log("OTP verified successfully:", res);
+        })
+        .catch((err) => {
+            console.error("Failed to verify OTP:", err);
+        });
+    }
+    
+
     const handleChange = () =>{
         setIsRegistered(!isRegistered);
     }
@@ -56,7 +113,11 @@ const Auth = () => {
                 return;
             }
 
-            await createUserWithEmailAndPassword(auth,email,password);
+            if(!isVerified){
+                toast.error("Please verify your account nigga")
+            }
+
+            await createUserWithEmailAndPassword(auth,email,password,phone);
             const user = auth.currentUser
 
             if(user){
@@ -112,19 +173,19 @@ const Auth = () => {
                 <h3 className="fw-bold d-inline mx-2">SDPT <span className='lead fs-3'>Academy</span></h3>
             </legend>
             {!isRegistered &&
-            <>
-            <div className="my-md-3 px-3">
-                <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
-                <input type="text" className="form-control rounded-5" id ="firstName"
-                onChange={(e)=> setFirstName(e.target.value)}/>
-            </div>
+                <>
+                <div className="my-md-3 px-3">
+                    <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
+                    <input type="text" className="form-control rounded-5" id ="firstName"
+                    onChange={(e)=> setFirstName(e.target.value)}/>
+                </div>
 
-            <div className="my-md-3 px-3">
-                <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
-                <input type="text" className="form-control rounded-5" id ="lastName"
-                onChange={(e)=> setLastName(e.target.value)}/>
-            </div>
-            </>
+                <div className="my-md-3 px-3">
+                    <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
+                    <input type="text" className="form-control rounded-5" id ="lastName"
+                    onChange={(e)=> setLastName(e.target.value)}/>
+                </div>
+                </>
             }
 
             <div className="mb-md-3 px-3">
@@ -149,15 +210,17 @@ const Auth = () => {
             {!isRegistered &&
             <div className="mb-md-3 px-3">
                 <label htmlFor="userPhone" className='form-label fw-semibold fs-5'>Mobile Number</label>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center justify-content-center">
                     <PhoneInput
                         country={"ph"}
                         value={phone}
                         onChange={setPhone}
-                        inputClass="rounded-5 form-control px-6 pe-15 w-100 py-2"
-                        dropdownClass='text-black'
+                        autoFocus='false'
+                        inputClass='border-white rounded-5'
+                        containerClass='rounded-5 form-control px-6 ps-1 w-100 py-0 border-white'
+                        buttonClass='m-1 bg-white rounded-5 border-white'
                     />
-                    <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={"onSignUp"}>Verify</button>
+                    <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
                 </div>
             </div>
             }
@@ -171,7 +234,7 @@ const Auth = () => {
                         value={otp}
                         onChange={(e) => setOtp(e.target.value)}
                         />
-                        <button type="button" className="btn btn-success w-100 mt-2" onClick={"onOTPVerify"}>Submit OTP</button>
+                        <button type="button" className="btn btn-success w-100 mt-2" onClick={onOTPVerify}>Submit OTP</button>
                     </div>
                     )}
             <div id="recaptcha-container"></div>
