@@ -98,7 +98,7 @@ const Courses = () => {
           </div>
 
         <div className="container">
-          <div className="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-2 text-center text-white">
+          <div className="row row-cols-1 row-cols-lg-3 text-center text-white">
             <div className="col-md">
               <div class="card course-card-design rounded-4">
                 <img src={courseImage} class="card-img-top img-fluid" alt="..."/>
