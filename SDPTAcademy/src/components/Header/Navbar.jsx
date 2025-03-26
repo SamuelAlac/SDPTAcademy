@@ -7,7 +7,7 @@ import CoursesIcon from '../../assets/Courses Icon.svg'
 import ProfileIcon from '../../assets/Account Icon.svg'
 import './navbar.css'
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../configs/firebase-config"; // Adjust the import path
+import { auth } from "../configs/firebase-config"; 
 import { toast, Toaster } from 'react-hot-toast';
 
 
