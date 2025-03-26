@@ -17,8 +17,8 @@ const CoursePreview = () => {
   return (
     <div>
         <Navbar className="bg-black border-bottom rounded-bottom-4 border-effect"/>
-
-        <section className="fixed-layout text-center text-white">
+        <div className="coursePrev-container">
+        <section className="fixed-layout text-center text-white section-background">
             <div className="container course-preview-container d-flex flex-column align-items-center justify-content-center">
                 <hr className='hr-white-line'></hr>
 
@@ -93,8 +93,8 @@ const CoursePreview = () => {
                     <img src={cartIcon2} alt="" className="img-fluid"/><span className='px-2'>Purchase</span></button>
                 </div>
             </div>
-  
         </section>
+        </div>
 
         <section>
             <div className="container vh-100">
