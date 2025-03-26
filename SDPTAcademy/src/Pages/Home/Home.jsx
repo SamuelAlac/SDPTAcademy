@@ -12,7 +12,7 @@ const Home = () => {
          <section className="text-light header-bg">
         </section>
         
-        <section className="p-5 text-light">
+        <section className="text-light">
         <h1 className='text-warning text-center py-5 fw-bold'>What is SDPT Academy?</h1>
         <hr className='hr-line'></hr>
             <div className="container text-start py-4">
@@ -33,7 +33,7 @@ const Home = () => {
           <hr className='hr-line'></hr>
         </section>
 
-        <section id ="info" className="p-5 text-light">
+        <section id ="info" className="text-light">
             <h1 className='text-warning flex-wrap text-center fw-semibold'>What can I use SDPT Academy for?</h1>
             <div className="container">
               <div className="row text-center py-5 g-3">
