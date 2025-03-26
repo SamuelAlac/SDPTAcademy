@@ -13,9 +13,11 @@ import { createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     } from 'firebase/auth'
 import { addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore'
+import OtpIcon from '../../assets/OtpIcon.svg'
 import { toast, Toaster } from 'react-hot-toast'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/bootstrap.css'
+import OtpInput from 'react-otp-input';
 import { RecaptchaVerifier, onAuthStateChanged } from "firebase/auth";
 
 
@@ -180,15 +182,34 @@ const Auth = () => {
             </legend>
             {showOTP ? (
                 <>
-                    <div className="mb-3">
-                        <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter OTP"
-                        value={otp}
-                        onChange={(e) => setOtp(e.target.value)}
+                    <div className="d-flex flex-column align-items-center justify-content-center p-5">
+                        <div className="d-flex justify-content-center mb-3">
+                        <img src={OtpIcon} className='img-fluid pe-2' alt="" />
+                        </div>
+                        <h5 className="text-center text-white mb-3">Enter One-Time Password</h5>
+                        <p className="text-center text-white-50 mb-3">
+                        A one-time password has been sent to ****-***-****
+                        </p>
+
+                        <div className="mb-3 d-flex flex-column justify-content-center align-items-center">
+                        <OtpInput
+                            value={otp}
+                            onChange={setOtp}
+                            numInputs={6}
+                            renderSeparator={<span>-</span>}
+                            renderInput={(props) => <input {...props} className="input-container rounded-4 mx-1 text-white" />}
+                            containerStyle="d-flex justify-content-center align-items-center"
                         />
-                        <button type="button" className="btn btn-success w-100 mt-2" onClick={onOTPVerify}>Submit OTP</button>
+                        <button type="button" className="btn btn-warning w-100 mt-3" onClick={onOTPVerify}>
+                            Verify
+                        </button>
+                        </div>
+
+                        <div className="text-center mt-3">
+                        <p className="text-white-50">
+                            Didn't receive a code? <a href="#" className="text-warning">Try again</a>
+                        </p>
+                        </div>
                     </div>
                 </>) 
                 

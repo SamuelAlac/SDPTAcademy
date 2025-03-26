@@ -12,6 +12,14 @@ body{
 
 }
 
+.input-container{
+    width: 45px !important;
+    height: 60px !important;
+    background-color: #1E1E1E !important;
+    box-shadow: var(--neu-inset-box-shadow) !important;
+}
+
+
 .btnLogin{
     max-width: 200px !important;
 }

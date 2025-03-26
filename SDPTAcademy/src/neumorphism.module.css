@@ -4,4 +4,6 @@
     --neu-stroke: solid 2px;
     --neu-border-color: linear-gradient(135deg, #0a0a0a, #171717) .6;
     --position-out: outside;
+
+    --neu-inset-box-shadow: inset 10px 10px 20px #0f0f0f, inset -10px -10px 20px #333333;
 }
