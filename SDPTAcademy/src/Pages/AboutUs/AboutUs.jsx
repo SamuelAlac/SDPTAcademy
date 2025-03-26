@@ -34,7 +34,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="section-team-info p-5 text-light mt-5">
+      <section className="section-team-info text-light mt-5">
         <div className="container">
           <div className="row text-center align-items-end justify-content-between">
             <div className="col-md-6 text-start">
@@ -84,7 +84,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="p-5 text-white mt-5">
+      <section className="text-white mt-5">
         <div className="container">
           <h2 className="text-warning fw-bold fs-1 text-center mt-5">
             SDPT Academy Team
