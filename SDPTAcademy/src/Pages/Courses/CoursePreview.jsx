@@ -23,7 +23,7 @@ const CoursePreview = () => {
           
             <div className="container course-preview-container d-flex flex-column align-items-center justify-content-center">
                 <hr className='hr-white-line'></hr>
-
+    
                 <h3 className='text-nowrap'>Advanced Java Course</h3>
                 <p className='lead fw-semibold fs-6 mb-5'>by SDPT Solutions</p>
 
