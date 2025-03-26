@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { useNavigate, Link } from "react-router-dom"
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import './auth.css'
@@ -16,7 +16,7 @@ import { addDoc, collection, doc, getDocs, setDoc } from 'firebase/firestore'
 import { toast, Toaster } from 'react-hot-toast'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/bootstrap.css'
-import { RecaptchaVerifier } from "firebase/auth";
+import { RecaptchaVerifier, onAuthStateChanged } from "firebase/auth";
 
 
 const Auth = () => {
@@ -164,7 +164,6 @@ const Auth = () => {
         }
     }
 
-
   return (
     <div className="container vh-100 d-flex align-items-center justify-content-center text-white">
         <Toaster/>
@@ -269,3 +268,17 @@ const Auth = () => {
 }
 
 export default Auth
+
+export function useAuth() {
+    const [user, setUser] = useState(null);
+  
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+      });
+  
+      return () => unsubscribe();
+    }, []);
+  
+    return user;
+  }

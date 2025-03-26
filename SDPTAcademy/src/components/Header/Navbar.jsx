@@ -48,7 +48,7 @@ const Navbar = ({className}) => {
                 <li className="nav-item">
                   <Link className="nav-link" to="/Auth">
                       {user ? (
-                      <img src={user.photoURL} alt={ProfileIcon} className="profile-pic" />
+                      <img src={user.photoURL} alt="" className="profile-pic" />
                     ) : (
                       <img className='img-fluid' src={ProfileIcon} alt="" />
                     )}       
