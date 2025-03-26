@@ -45,14 +45,41 @@ const Navbar = ({className}) => {
                     <p className='mb-0'>Courses</p>
                   </Link>
                 </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/Auth">
+                <li className="nav-item dropdown">
+                  <Link className="nav-linkdropdown-toggle" 
+                    to="/#"
+                    id="profileDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     {user ? (
                       <img src={user?.photoURL || ProfileIcon} alt="User Profile" className="profile-pic" />
                     ) : (
-                      <img className="img-fluid" src={ProfileIcon} alt="Default Profile" />
+                      <img className="img-fluid profile-pic" src={ProfileIcon} alt="Default Profile" />
                     )}
-                  </Link>
+                    </Link>
+                  <ul className="dropdown-menu dropdown-menu-end bg-warning text-white" >
+                    {user ? (
+                      <>
+                        <li>
+                          <Link className="dropdown-item text-white" to="/Profile">
+                            Profile
+                          </Link>
+                        </li>
+                        <li>
+                          <button className="dropdown-item text-white" onClick={() => auth.signOut()}>
+                            Logout
+                          </button>
+                        </li>
+                      </>
+                    ) : (
+                      <li>
+                        <Link className="dropdown-item" to="/Auth">
+                          Login
+                        </Link>
+                      </li>
+                    )}
+                  </ul>
                 </li>
               </ul>
             </div>

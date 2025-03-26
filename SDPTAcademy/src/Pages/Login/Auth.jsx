@@ -21,7 +21,7 @@ import { RecaptchaVerifier, onAuthStateChanged } from "firebase/auth";
 
 const Auth = () => {
 
-
+    const navigate = useNavigate();
     //Getting and Setting login credentials
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -145,6 +145,9 @@ const Auth = () => {
         try{
             await signInWithEmailAndPassword(auth, email, password);
             alert("Successfully login")
+            toast.success('Successfully logged in!');
+            console.log(email);
+            navigate('/'); 
         }catch(error){
             console.log(error.message)
             toast.error("Invalid Email or Password");
@@ -158,8 +161,11 @@ const Auth = () => {
     const handleGoogleSignIn = async () =>{
         try{
             await signInWithPopup(auth, googleAuthProvider)
+            toast.success('Successfully logged in with Google!');
+            navigate('/'); 
         }catch(error){
             console.log(error.message);
+            toast.error('Google Sign-In failed');
         }
     }
 

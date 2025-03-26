@@ -12,6 +12,7 @@ import playButtonIcon from '../../assets/playButtonIcon.svg'
 import checkedIcon from '../../assets/checkedIcon.svg'
 import lockIcon from '../../assets/lockIcon.svg'
 import coursePreqIcon from '../../assets/coursePreqIcon.svg'
+import ratingsIcon from '../../assets/ratingsIcon.svg'
 
 const CoursePreview = () => {
   return (
@@ -224,27 +225,30 @@ const CoursePreview = () => {
                         <h2 className="accordion-header">
                             <button className="accordion-button accordion-container text-white fs-4 fw-semibold" type = 'button' data-bs-toggle="collapse"
                             data-bs-target="#info-three">
-                                <img src={coursePreqIcon} alt="" className="img-fluid me-1"/>Course Pre-requisites
+                                <img src={ratingsIcon} alt="" className="img-fluid me-1"/>Ratings and Reviews
                             </button>
                         </h2>
 
                         <div id="info-three" className="accordion-collapse collapse" data-bs-parent="#info-three-accordion">
                             <div className="accordion-body text-white">
-                            <div className="d-flex justify-content-around">
+                            <div className="accordion-header">
+                                <div className="container gap-4 d-md-flex align-items-center justify-content-center text-center">
                                     <div className="container">
-                                        <p>Basic Java</p>
-                                        <p>ReactJS</p>
-                                        <div className="row">
-                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalog</p>
-                                            <p className='col-1 text-nowrap'>1m 35s</p>
-                                        </div>
-                                        <div className="row">
-                                            <p className='col-8 text-truncate'>Java Tutorial #3: User Input & Arithmetic Operators | Eclipse | Filipino | Tagalogggggg</p>
-                                            <p className='col-1 text-nowrap'>1m 35s</p>
-                                        </div>
+                                        <h3 className="fw-bold">Total Reviews</h3>
+                                        <h1 className="fw-bold">7.5K</h1>
                                     </div>
-                                    {/* button placeholder bfr */}
+
+                                    <div className="container">
+                                        <h3 className="fw-bold">Average Rating</h3>
+                                        <h1 className="fw-bold">4.9</h1>
+                                    </div>
+
+                                    <div className="container">
+                                        <h3 className="fw-bold">Average Rating</h3>
+                                        <h1 className="fw-bold">4.9</h1>
+                                    </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
