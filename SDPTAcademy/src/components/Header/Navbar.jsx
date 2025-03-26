@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import SDPTLogo from '../../assets/SDPT Logo.svg'
 import HomeIcon from '../../assets/Home Icon.svg'
@@ -13,11 +13,39 @@ import { toast, Toaster } from 'react-hot-toast';
 
 const Navbar = ({ className }) => {
   const [user] = useAuthState(auth);
+  const [showNavbar, setShowNavbar] = useState(true); // State to toggle navbar visibility
+  const [lastScrollY, setLastScrollY] = useState(0); // Track the last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setShowNavbar(false);
+      } else {
+        // Scrolling up
+        setShowNavbar(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
     <>
       <Toaster toastOptions={{ duration: 4000 }} /> {/* Add this */}
-      <nav className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top`}>
+      <nav
+        className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top ${
+          showNavbar ? 'visible' : 'hidden'
+        }`}
+      >
         <div className="container-fluid px-3 d-flex align-items-center">
             <a href="/" className='navbar-brand d-flex align-items-center'> 
                 <img src={SDPTLogo} className='img-fluid pe-2' alt=""  />

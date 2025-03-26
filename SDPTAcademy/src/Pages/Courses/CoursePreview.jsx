@@ -27,7 +27,8 @@ const CoursePreview = () => {
                 <h3 className='text-nowrap'>Advanced Java Course</h3>
                 <p className='lead fw-semibold fs-6 mb-5'>by SDPT Solutions</p>
 
-                <p className='mb-4 responsive-text'>Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
+                <p className='mb-4 responsive-text'>
+                    Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
                     Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
                     Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.
                 </p>
