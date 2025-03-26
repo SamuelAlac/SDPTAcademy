@@ -19,13 +19,14 @@ const CoursePreview = () => {
         <Navbar className="bg-black border-bottom rounded-bottom-4 border-effect"/>
         <div className="coursePrev-container">
         <section className="fixed-layout text-center text-white section-background">
+          
             <div className="container course-preview-container d-flex flex-column align-items-center justify-content-center">
                 <hr className='hr-white-line'></hr>
 
-                <h3 className='text-nowra '>Advanced Java Course</h3>
+                <h3 className='text-nowrap'>Advanced Java Course</h3>
                 <p className='lead fw-semibold fs-6 mb-5'>by SDPT Solutions</p>
 
-                <p className='mb-4'>Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
+                <p className='mb-4 responsive-text'>Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
                     Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language. 
                     Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.
                 </p>
@@ -138,7 +139,7 @@ const CoursePreview = () => {
 
                                         <div className='container'>
                                             <h5 className="fw-bold text-warning">Table of Contents</h5>
-                                    <ul className="list-group bg-black">
+                                    <ul className="list-group">
                                         <li className="list-group-item bg-transparent border-0">
                                             <img className='img-fluid' src={playButtonIcon} alt="" />
                                             <span className="card-text mx-1 text-light">Variables & Datatypes</span>
