@@ -7,7 +7,6 @@ import './ProfileDashboard.css';
 const ProfileDashboard = () => {
 
   const [user, setUser] = useState(null);
-
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
