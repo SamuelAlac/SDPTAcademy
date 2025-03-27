@@ -1,0 +1,11 @@
+.course-fixed-playlist-layout::before{
+    display:block;
+    content: "";
+    height: 100px;
+}
+
+.playlist-box{
+    width:100px;
+    height:100px;
+    background: black;
+}
