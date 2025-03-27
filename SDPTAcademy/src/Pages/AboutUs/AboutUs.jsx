@@ -98,7 +98,7 @@ const AboutUs = () => {
           <div className="row align-items-center justify-content-center">
             <div className="container col-md-3 col-sm-12 text-center d-flex flex-column align-items-center justify-content-center m-0 mb-3">
               <div className="container-founder">
-                <div className="card-design card text-white card-bg">
+                <div className="card-design card text-white card-bg1">
                 <img src={coFounder} alt="" className="overlay-image" />
                 </div>
               </div>
@@ -124,7 +124,7 @@ const AboutUs = () => {
 
         <div className="container d-flex align-items-center justify-content-center">
           <div className="row align-items-center justify-content-center">
-            <div className="col-md-4">
+            <div className="col-md-4 m-3">
               <p className="text-lg text-indent text-justify">
                 Uses her{" "}
                 <span className="fw-bold text-warning">Creative Thinking</span>{" "}
@@ -136,7 +136,7 @@ const AboutUs = () => {
             </div>
             <div className="container col-md-3 col-sm-12 text-center d-flex flex-column align-items-center justify-content-center m-0">
               <div className="container-founder">
-                <div className="card-design card text-white card-bg">
+                <div className="card-design card text-white card-bg2">
                 <img src={coFounder2} alt="" className="overlay-image2" />
                 </div>
               </div>

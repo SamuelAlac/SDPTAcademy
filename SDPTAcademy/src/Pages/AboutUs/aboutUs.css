@@ -33,11 +33,19 @@
   border-radius: 15px;
 }
 
-.card-bg {
+.card-bg1 {
   width: 100%;
   height: 100%;
   position: absolute; 
-  left: 0;
+  left: -7%;
+  bottom:0;
+  z-index: 1;
+}
+.card-bg2 {
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+  left: -6%;
   bottom:0;
   z-index: 1;
 }
