@@ -18,7 +18,7 @@
     background-color: #1E1E1E;
     box-shadow: var(--neu-box-shadow);
     border-radius: 30px;
-     margin: 20px;
+    margin: 20px;
 }
 
 .profile-card,
@@ -26,6 +26,10 @@
     position: relative; 
     padding: 20px; 
     min-height: 380px;
+}
+
+.password-card {
+  margin-top: 40px;
 }
 
 .account-card {
