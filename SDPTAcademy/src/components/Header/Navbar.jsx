@@ -46,7 +46,7 @@ const Navbar = ({ className }) => {
           showNavbar ? 'visible' : 'hidden'
         }`}
       >
-        <div className="container-fluid px-3 d-flex align-items-center">
+        <div className="container-fluid d-flex align-items-center">
             <a href="/" className='navbar-brand d-flex align-items-center'> 
                 <img src={SDPTLogo} className='img-fluid pe-2' alt=""  />
                 <span className='lead fw-bold'>SDPT</span> Academy
