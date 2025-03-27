@@ -31,7 +31,7 @@ body{
 
 ::placeholder,
 .form-control::placeholder {
-    color: rgb(61, 56, 56)19, 113, 113) !important; /* Customize for Bootstrap */
+    color: rgb(61, 56, 56)19, 113, 113 !important; /* Customize for Bootstrap */
   }
 
 .text-indent{
