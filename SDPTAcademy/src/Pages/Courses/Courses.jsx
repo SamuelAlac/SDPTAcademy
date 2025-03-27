@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Header/Navbar'
 import lessonImage from '../../assets/lessonImage.svg'
 import bookIcon from '../../assets/bookIcon.svg'
@@ -9,15 +9,19 @@ import cartIcon from '../../assets/cartIcon.svg'
 import searchIcon from '../../assets/searchIcon.svg'
 import courseImage from '../../assets/courseImage.svg'
 import './courses.css'
-import { Link } from 'react-router-dom'
+import { useNavigate, Link, replace, Navigate } from 'react-router-dom'
+
 
 const Courses = () => {
+
+  const navigate = useNavigate();
 
   const [courseName, setCourseName] = useState("");
   const [courseDescription, setCourseDescription] = useState("");
   const [coursePrice, setCoursePrice] = useState(0);
   const [coursePurchaseDuration, setCoursePurchaseDuration] = useState(0);
   
+  const isPurchased = true;
 
   return (
     <div>
@@ -70,8 +74,19 @@ const Courses = () => {
                     <p class="card-text fs-5">Learn different programming languages through the use of our Filipino Language which is Tagalog using the Java Language.</p>
 
                     <p className="card-text fs-1 fw-bold text-center my-3">₱800<span className='fw-normal'>/1 year</span></p>
-                    <button className="btn btn-warning btn-lg rounded-5 text-white d-flex align-items-center justify-content-center"data-bs-toggle = "modal" data-bs-target="#purchase">
+
+                    {!isPurchased &&
+                      <button className="btn btn-warning btn-lg rounded-5 text-white d-flex align-items-center justify-content-center"
+                      data-bs-toggle = "modal" data-bs-target="#purchase">
                       <img src={cartIcon} alt="" className="img-fluid px-1" />Purchase</button>
+                    }
+
+                    {isPurchased &&
+                      <Link className="btn btn-warning btn-lg rounded-5 text-white d-flex align-items-center justify-content-center"
+                      to={"/CoursePlaylist"}>
+                      <img src={cartIcon} alt="" className="img-fluid px-1" />Play</Link>
+                    }
+                      
                   </div>
                 </div>
               </div>
@@ -89,7 +104,7 @@ const Courses = () => {
 
               <div class="dropdown d-flex align-items-center justify-content-center">
                 <button class="btn btn-sm text-white mx-2 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Category</button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu bg-warning">
                   <li><a class="dropdown-item" href="#">I</a></li>
                   <li><a class="dropdown-item" href="#">Miss</a></li>
                   <li><a class="dropdown-item" href="#">Her</a></li>
@@ -255,9 +270,6 @@ const Courses = () => {
               </div>
             </div>
             
-
-
-
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, use } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,6 +10,7 @@ import Auth from './Pages/Login/Auth';
 import CoursePreview from './Pages/Courses/CoursePreview';
 import OtpVerification from './components/otp/OtpVerification';
 import ProfileDashboard from './Pages/ProfileDashboard/ProfileDashboard';
+import CoursePlaylist from './Pages/Courses/CoursePlaylist';
 
 const ScrollToTop = () =>{
   const location = useLocation();
@@ -24,6 +25,7 @@ const ScrollToTop = () =>{
 
 
 function App() {
+
 //temp lng to di ko alam paano lagay tong ScrollToTop sa router dun sa main T^T..
   return (
     <Router>
@@ -36,9 +38,11 @@ function App() {
         <Route path='/CoursePreview' element={<CoursePreview/>}/>
         <Route path='otp' element={<OtpVerification/>}/>
         <Route path='ProfileDashboard' element={<ProfileDashboard/>}/>
+
         <Route element={<ProtectedRoutes/>}>
-          
+          <Route path='/CoursePlaylist' element={<CoursePlaylist/>}/>
         </Route>
+        
       </Routes>
     </Router>
   )
