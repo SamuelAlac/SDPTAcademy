@@ -3,6 +3,7 @@ import Navbar from "../../components/Header/Navbar";
 import "./aboutUs.css";
 import imgSTI from "../../assets/StiBsit.svg";
 import coFounder from "../../assets/Co-Founder1.svg";
+import coFounder2 from "../../assets/Co-Founder2.svg";
 
 const AboutUs = () => {
   return (
@@ -93,7 +94,7 @@ const AboutUs = () => {
           <hr></hr>
         </div>
 
-        <div className="d-flex align-items-center justify-content-center ">
+        <div className="container d-flex align-items-center justify-content-center ">
           <div className="row align-items-center justify-content-center">
             <div className="container col-md-3 col-sm-12 text-center d-flex flex-column align-items-center justify-content-center m-0 mb-3">
               <div className="container-founder">
@@ -106,7 +107,7 @@ const AboutUs = () => {
               <p>Co-Founder</p>
               </div>
             </div>
-            <div className="container col-md-4 col-sm-12 m-0">
+            <div className="col-md-4 m-0">
               <p className="text-lg text-indent text-justify ">
                 Uses his{" "}
                 <span className="fw-bold text-warning">Logical Thinking</span>{" "}
@@ -133,12 +134,16 @@ const AboutUs = () => {
               <hr></hr>
               <p>@spdtCarmela</p>
             </div>
-            <div className="col-md-3 text-center">
-              <div className="card-design card p-3 my-5 text-white">
-                <p>co-founder image</p>
+            <div className="container col-md-3 col-sm-12 text-center d-flex flex-column align-items-center justify-content-center m-0 mb-3">
+              <div className="container-founder">
+                <div className="card-design card text-white card-bg">
+                <img src={coFounder2} alt="" className="overlay-image2" />
+                </div>
               </div>
+              <div className="container">
               <h6 className="fw-bold">Carmela Isabelle Mendoza</h6>
               <p>Co-Founder</p>
+              </div>
             </div>
           </div>
         </div>
