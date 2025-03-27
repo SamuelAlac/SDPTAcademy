@@ -22,16 +22,26 @@
 
 .profile-card,
 .password-card {
-  min-height: 380px;
+    position: relative; 
+    padding: 20px; 
+    min-height: 380px;
 }
 
 .account-card {
-  min-height: 500px;
+    position: relative; 
 }
 
 .input-container{
     background-color: #1E1E1E !important;
     box-shadow: var(--neu-inset-box-shadow) !important;
+}
+
+.input-fields{
+   width: 90%;
+}
+
+.first-label{
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
