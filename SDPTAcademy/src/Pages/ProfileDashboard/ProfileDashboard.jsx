@@ -55,7 +55,7 @@ const ProfileDashboard = () => {
 
           {/* Account Details */}
           <div className="col card card-design account-card text-white text-left align-items-center">
-            <div className="content pt-3 mb-5 mt-5 ms-4 text-warning"> <h2>Account Details</h2></div>
+            <div className="content pt-3 mt-5 text-warning"> <h2>Account Details</h2></div>
             <div className='input-fields justify-content-center align-items-center mt-5'>
             <div className="row px-3">
               <div className="col mb-md-3">
@@ -83,7 +83,7 @@ const ProfileDashboard = () => {
             </div>
             </div>
             <div className='align-items-center justify-content-center'>
-            <button className="btn btn-warning ms-4 px-5 py-2">Save Changes</button>
+            <button className="btn btn-warning ms-4 px-5 py-2 mb-4 mt-3">Save Changes</button>
             </div>
           </div>
         </div>
