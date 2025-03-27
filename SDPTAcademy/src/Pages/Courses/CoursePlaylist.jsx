@@ -15,10 +15,10 @@ const CoursePlaylist = () => {
 
                 <ul className='list-unstyled'>
                   <li>
-                    <p>I: Hello World</p>
+                    <p className='text-warning text-opacity-75'>I: Hello World</p>
                   </li>
                   <li>
-                    <p>II: Hello World Advance Skirtt</p>
+                    <p className='text-warning'>II: Hello World Advance Skirtt</p>
                   </li>
                   <li>
                     <p>II: Hello World Advance Skirtt</p>
@@ -48,7 +48,11 @@ const CoursePlaylist = () => {
 
                 </div>
               </div>
-              <div className='container col-md'>sam</div>
+              <div className='container col-md'>
+                <p className="fw-bold fs-5 text-center">Ask A Question</p>
+
+
+              </div>
             </div>
           </div>
         </section>
