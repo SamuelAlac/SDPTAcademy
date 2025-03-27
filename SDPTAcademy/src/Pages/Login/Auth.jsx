@@ -36,10 +36,13 @@ const Auth = () => {
     const [confirmationResult, setConfirmationResult] = useState(null);
     const [disableSend, setDisableSend] = useState(false); 
     const [isVerified, setIsVerified] = useState(false);
-
-    //This is for switching gui between Login GUI and Sign Up GUI
     const [isRegistered, setIsRegistered] = useState(true);
 
+
+    //This is for switching gui between Login GUI and Sign Up GUI
+    const handleChange = () =>{
+        setIsRegistered(!isRegistered);
+    }
 
 
     const onCaptchVerify = () => {
@@ -98,10 +101,6 @@ const Auth = () => {
     }
     
 
-    const handleChange = () =>{
-        setIsRegistered(!isRegistered);
-    }
-
     //For handling user registration
     const handleRegistration = async(e) =>{
         e.preventDefault();
@@ -144,7 +143,6 @@ const Auth = () => {
     
 
     //For handling user login
-    //WIP
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
@@ -159,7 +157,8 @@ const Auth = () => {
       };
 
     //For handling google login
-    const handleGoogleSignIn = async () =>{
+    const handleGoogleSignIn = async (e) =>{
+        e.preventDefault();
         try{
             await signInWithPopup(auth, googleAuthProvider)
             toast.success('Successfully logged in with Google!');
