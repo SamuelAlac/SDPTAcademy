@@ -97,7 +97,7 @@ const AboutUs = () => {
           <div className="row align-items-center justify-content-center">
             <div className="col-md-3 text-center">
               <div className="container-founder">
-                <div className="card-design card p-3 my-5 text-white card-bg">
+                <div className="card-design card text-white card-bg">
                 <img src={coFounder} alt="" className="overlay-image" />
               </div>
               </div>
