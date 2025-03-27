@@ -13,6 +13,7 @@ import checkedIcon from '../../assets/checkedIcon.svg'
 import lockIcon from '../../assets/lockIcon.svg'
 import coursePreqIcon from '../../assets/coursePreqIcon.svg'
 import ratingsIcon from '../../assets/ratingsIcon.svg'
+import doubleArrowIcon from '../../assets/doubleArrowIcon.svg'
 
 const CoursePreview = () => {
   return (
@@ -234,22 +235,93 @@ const CoursePreview = () => {
                             <div className="accordion-body text-white">
                             <div className="accordion-header">
                                 <div className="container gap-4 d-md-flex align-items-center justify-content-center text-center">
+                                    
                                     <div className="container">
                                         <h3 className="fw-bold">Total Reviews</h3>
-                                        <h1 className="fw-bold">7.5K</h1>
+
+                                            <h1 className="fw-bold">7.5K
+                                            <img src={doubleArrowIcon} alt="" className="img-fluid mb-2 ms-2" />
+                                            </h1>
+                                    </div>
+
+                                    <div className="container text-center">
+                                        <h3 className="fw-bold">Average Rating</h3>
+
+                                        <div className='d-md-flex justify-content-center gap-2'>
+                                            <h1 className="fw-bold">4.9</h1>
+                                            <img className='img-fluid mb-1' src={rateIcon} alt="" />
+                                            <img className='img-fluid mb-1' src={rateIcon} alt="" />
+                                            <img className='img-fluid mb-1' src={rateIcon} alt="" />
+                                            <img className='img-fluid mb-1' src={rateIcon} alt="" />
+                                            <img className='img-fluid mb-1' src={rateIcon} alt="" />
+                                        </div>
                                     </div>
 
                                     <div className="container">
-                                        <h3 className="fw-bold">Average Rating</h3>
-                                        <h1 className="fw-bold">4.9</h1>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="progress1" className="me-2">50</label>
+                                            <div className="progress bg-transparent" style={{ width: "100%" }}>
+                                                <div className="progress-bar bg-warning" id="progress1" role="progressbar" style={{ width: "100%" }}></div>
+                                            </div>
+                                            <label htmlFor="progress1" className="ms-2">50.7k</label>
+                                        </div>
+
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="progress1" className="me-2">50</label>
+                                            <div className="progress bg-transparent" style={{ width: "100%" }}>
+                                                <div className="progress-bar bg-warning" id="progress1" role="progressbar" style={{ width: "80%" }}></div>
+                                            </div>
+                                            <label htmlFor="progress1" className="ms-2">20.5k</label>
+                                        </div>
+
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="progress1" className="me-2">50</label>
+                                            <div className="progress bg-transparent" style={{ width: "100%" }}>
+                                                <div className="progress-bar bg-warning bg-opacity-50" id="progress1" role="progressbar" style={{ width: "50%" }}></div>
+                                            </div>
+                                            <label htmlFor="progress1" className="ms-2">5k</label>
+                                        </div>
+
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="progress1" className="me-2">50</label>
+                                            <div className="progress bg-transparent" style={{ width: "100%" }}>
+                                                <div className="progress-bar bg-warning bg-opacity-25" id="progress1" role="progressbar" style={{ width: "30%" }}></div>
+                                            </div>
+                                            <label htmlFor="progress1" className="ms-2">250</label>
+                                        </div>
+
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="progress1" className="me-2">50</label>
+                                            <div className="progress bg-transparent" style={{ width: "100%" }}>
+                                                <div className="progress-bar bg-warning bg-opacity-10" id="progress1" role="progressbar" style={{ width: "10%" }}></div>
+                                            </div>
+                                            <label htmlFor="progress1" className="ms-2">110</label>
+                                        </div>
+
                                     </div>
 
-                                    <div className="container">
-                                        <h3 className="fw-bold">Average Rating</h3>
-                                        <h1 className="fw-bold">4.9</h1>
-                                    </div>
                                 </div>
                             </div>
+                            </div>
+
+                            <div className='accordion-body container border border-top-light bg-black text-white'>
+                                <ul className="list-group">
+                                    <li className="list-group-item">
+                                        <p>My first time buying an online course here at SDPT Academy. I would recommend would buy again. 
+                                            My first time buying an online course here at SDPT Academy. I would recommend would buy again. 
+                                            My first time buying an online course here at SDPT Academy. I would recommend would buy again. 
+                                            My first time buying an online course here at SDPT Academy.
+                                        </p>
+                                    </li>
+
+                                    <li className="list-group-item">
+                                        <p>My first time buying an online course here at SDPT Academy. I would recommend would buy again. 
+                                            My first time buying an online course here at SDPT Academy. I would recommend would buy again. 
+                                            My first time buying an online course here at SDPT Academy. I would recommend would buy again. 
+                                            My first time buying an online course here at SDPT Academy.
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
