@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/Header/Navbar";
 import "./aboutUs.css";
 import imgSTI from "../../assets/StiBsit.svg";
+import coFounder from "../../assets/Co-Founder1.svg";
 
 const AboutUs = () => {
   return (
@@ -95,8 +96,10 @@ const AboutUs = () => {
         <div className="container d-flex align-items-center justify-content-center">
           <div className="row align-items-center justify-content-center">
             <div className="col-md-3 text-center">
-              <div className="card-design card p-3 my-5 text-white">
-                <p>co-founder image</p>
+              <div className="container-founder">
+                <div className="card-design card p-3 my-5 text-white card-bg">
+                <img src={coFounder} alt="" className="overlay-image" />
+              </div>
               </div>
               <h6 className="fw-bold">Jean Eren Fajardo</h6>
               <p>Co-Founder</p>
