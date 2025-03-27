@@ -19,7 +19,7 @@ const ProfileDashboard = () => {
             <div className="content">Change Password</div>
           </div>
           </div>    
-          <div className="col  account-card">
+          <div className="col account-card">
             <div className="content">Account Details</div>
           </div>
         </div>
