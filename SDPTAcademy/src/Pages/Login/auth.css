@@ -13,13 +13,25 @@ body{
 }
 
 .input-container{
-    width: 45px !important;
-    height: 60px !important;
     background-color: #1E1E1E !important;
     box-shadow: var(--neu-inset-box-shadow) !important;
+}
+
+.input-otp-size{
+    width: 45px !important;
+    height: 60px !important;
 }
 
 
 .btnLogin{
     max-width: 200px !important;
 }
+
+.react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus {
+    background-color: rgba(0,0,0,0) !important;
+    cursor:text;
+}
+
+.react-tel-input .form-control::placeholder { /* Standard syntax */
+    color: rgba(245, 245, 245, 0.452); /* Replace with your desired color */
+  }
