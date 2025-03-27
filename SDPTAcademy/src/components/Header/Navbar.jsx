@@ -93,7 +93,7 @@ const Navbar = ({ className }) => {
                     {user ? (
                       <>
                         <li>
-                          <Link className="dropdown-item text-white" to="/Profile">
+                          <Link className="dropdown-item text-white" to="/ProfileDashboard">
                             Profile
                           </Link>
                         </li>
