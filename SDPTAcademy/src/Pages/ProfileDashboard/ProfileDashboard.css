@@ -1,3 +1,5 @@
+@import '../../neumorphism.module.css';
+
 .dashboard-container {
   background: url('/path-to-your-svg.svg') no-repeat center center;
   background-size: cover;
@@ -11,18 +13,13 @@
 .cards-container {
     display: flex;
   }
-
-.profile-card,
-.account-card,
-.password-card {
-  background: #1a1a1a;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgb(255, 255, 255);
-  color: white;
-  text-align: center;
-  margin: 20px;
-}
+  
+.card-design{
+    background-color: #1E1E1E;
+    box-shadow: var(--neu-box-shadow);
+    border-radius: 30px;
+     margin: 20px;
+  }
 
 .profile-card,
 .password-card {
@@ -45,13 +42,10 @@
   .dashboard-container{
     margin-top: 80px;
   }
-
+  .cards-container {
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+  }
 }
 
-@media (max-width: 768px) {
-    .cards-container {
-      flex-direction: column;
-      align-items: center; 
-      justify-content: center;
-    }
-}
