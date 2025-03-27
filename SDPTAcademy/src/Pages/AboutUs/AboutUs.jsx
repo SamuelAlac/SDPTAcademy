@@ -99,7 +99,7 @@ const AboutUs = () => {
               <div className="container-founder">
                 <div className="card-design card text-white card-bg">
                 <img src={coFounder} alt="" className="overlay-image" />
-              </div>
+                </div>
               </div>
               <h6 className="fw-bold">Jean Eren Fajardo</h6>
               <p>Co-Founder</p>
