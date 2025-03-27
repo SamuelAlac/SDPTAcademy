@@ -170,6 +170,7 @@ const Auth = () => {
     }
 
   return (
+    <section className='fixed-layout'>
     <div className="container vh-100 d-flex align-items-center justify-content-center text-white">
         <Toaster toastOptions={{ duration: 4000 }} />
         <form className='p-3 container login-container bg-dark rounded-4'>
@@ -294,9 +295,9 @@ const Auth = () => {
                 </>
                 )}
         </form>
-
-        
+    
     </div>
+    </section>
   )
 }
 

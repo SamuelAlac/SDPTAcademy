@@ -1,8 +1,5 @@
 @import '../../neumorphism.module.css';
 
-body{
-    height: 1000px;
-}
 
 .login-container{
     max-width: 600px !important;
