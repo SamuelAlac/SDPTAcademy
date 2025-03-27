@@ -11,7 +11,7 @@ import cartIcon2 from '../../assets/cartIcon2.svg'
 import playButtonIcon from '../../assets/playButtonIcon.svg'
 import checkedIcon from '../../assets/checkedIcon.svg'
 import lockIcon from '../../assets/lockIcon.svg'
-import coursePreqIcon from '../../assets/coursePreqIcon.svg'
+import coursePreqIcon from '../../assets/coursePreqIcon.svg'    
 import ratingsIcon from '../../assets/ratingsIcon.svg'
 
 const CoursePreview = () => {
