@@ -259,11 +259,11 @@ const Auth = () => {
                                 value={phone}
                                 onChange={setPhone}
                                 autoFocus='false'
-                                inputClass='border-white rounded-5'
-                                containerClass='rounded-5 form-control px-6 ps-1 w-100 py-0 border-white'
+                                inputClass='border-white rounded-5 form-control w-100'
+                                containerClass='rounded-5 px-6 ps-1 py-0 border-white'
                                 buttonClass='m-1 bg-white rounded-5 border-white'
                             />
-                            <button type="button" className="btn bg-warning ms-3 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
+                            <button type="button" className="btn bg-warning ms-2 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
                         </div>
                         <div id="recaptcha-container"></div>
                     </div>
