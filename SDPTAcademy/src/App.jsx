@@ -9,6 +9,7 @@ import ProtectedRoutes from './components/Protected/ProtectedRoutes';
 import Auth from './Pages/Login/Auth';
 import CoursePreview from './Pages/Courses/CoursePreview';
 import OtpVerification from './components/otp/OtpVerification';
+import ProfileDashboard from './Pages/ProfileDashboard/ProfileDashboard';
 
 const ScrollToTop = () =>{
   const location = useLocation();
@@ -34,7 +35,7 @@ function App() {
         <Route path='Auth' element={<Auth/>}/>
         <Route path='/CoursePreview' element={<CoursePreview/>}/>
         <Route path='otp' element={<OtpVerification/>}/>
-
+        <Route path='ProfileDashboard' element={<ProfileDashboard/>}/>
         <Route element={<ProtectedRoutes/>}>
           
         </Route>
