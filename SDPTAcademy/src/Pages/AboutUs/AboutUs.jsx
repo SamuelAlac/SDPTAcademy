@@ -134,7 +134,7 @@ const AboutUs = () => {
               <hr></hr>
               <p>@spdtCarmela</p>
             </div>
-            <div className="container col-md-3 col-sm-12 text-center d-flex flex-column align-items-center justify-content-center m-0 mb-3">
+            <div className="container col-md-3 col-sm-12 text-center d-flex flex-column align-items-center justify-content-center m-0">
               <div className="container-founder">
                 <div className="card-design card text-white card-bg">
                 <img src={coFounder2} alt="" className="overlay-image2" />
