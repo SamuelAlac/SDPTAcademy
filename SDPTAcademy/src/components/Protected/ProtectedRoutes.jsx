@@ -9,6 +9,7 @@ const ProtectedRoutes = () => {
     if(user){
         return <Outlet/>;
     }else{
+        //sabihan muna ko pag gagalawin xD - ryu
         return <Navigate to="/Auth"/>;
     }
 }
