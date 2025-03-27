@@ -195,7 +195,7 @@ const Auth = () => {
                             onChange={setOtp}
                             numInputs={6}
                             renderSeparator={<span>-</span>}
-                            renderInput={(props) => <input {...props} className="input-container rounded-4 mx-1 text-white" />}
+                            renderInput={(props) => <input {...props} className="input-container rounded-4 mx-1 text-white input-otp-size" />}
                             containerStyle="d-flex justify-content-center align-items-center"
                         />
                         <button type="button" className="btn btn-warning w-100 mt-3" onClick={onOTPVerify}>
@@ -219,13 +219,13 @@ const Auth = () => {
                     <>
                     <div className="my-md-3 px-3">
                         <label htmlFor="firstName" className='form-label fw-semibold fs-5'>First Name</label>
-                        <input type="text" className="form-control rounded-5" id ="firstName"
+                        <input type="text" className="form-control rounded-5 input-container text-white" id ="firstName"
                         onChange={(e)=> setFirstName(e.target.value)}/>
                     </div>
 
                     <div className="my-md-3 px-3">
                         <label htmlFor="lastName" className='form-label fw-semibold fs-5'>Last Name</label>
-                        <input type="text" className="form-control rounded-5" id ="lastName"
+                        <input type="text" className="form-control rounded-5 input-container text-white" id ="lastName"
                         onChange={(e)=> setLastName(e.target.value)}/>
                     </div>
                     </>
@@ -233,19 +233,19 @@ const Auth = () => {
 
                     <div className="mb-md-3 px-3">
                         <label htmlFor="userEmail" className='form-label fw-semibold fs-5'>Email</label>
-                        <input type="email" className="form-control rounded-5" id ="userEmail"
+                        <input type="email" className="form-control rounded-5 input-container text-white" id ="userEmail"
                         onChange={(e)=> setEmail(e.target.value)}/>
                     </div>
                     <div className="mb-md-3 px-3">
                         <label htmlFor="userPassword" className='form-label fw-semibold fs-5'>Password</label>
-                        <input type="password" className="form-control rounded-5" id ="userPassword"
+                        <input type="password" className="form-control rounded-5 input-container text-white" id ="userPassword"
                         onChange={(e)=> setPassword(e.target.value)}/>
                     </div>
 
                     {!isRegistered &&
                     <div className="mb-md-3 px-3">
                         <label htmlFor="userConfirmPassword" className='form-label fw-semibold fs-5'>Confirm Password</label>
-                        <input type="password" className="form-control rounded-5" id ="userConfirmPassword"
+                        <input type="password" className="form-control rounded-5 input-container text-white" id ="userConfirmPassword"
                         onChange={(e)=>setConfirmPassword(e.target.value)}/>
                     </div>
                     }
@@ -253,15 +253,14 @@ const Auth = () => {
                     {!isRegistered &&
                     <div className="mb-md-3 px-3">
                         <label htmlFor="userPhone" className='form-label fw-semibold fs-5'>Mobile Number</label>
-                        <div className="d-flex align-items-center justify-content-center mb-2">
+                        <div className="d-flex align-items-center justify-content-center mb-2 placeholder-glow">
                             <PhoneInput
                                 country={"ph"}
                                 value={phone}
                                 onChange={setPhone}
-                                autoFocus='false'
-                                inputClass='border-white rounded-5 form-control w-100'
-                                containerClass='rounded-5 px-6 ps-1 py-0 border-white'
-                                buttonClass='m-1 bg-white rounded-5 border-white'
+                                inputClass='input-container text-white rounded-5 w-100'
+                                buttonClass='rounded-5 input-container border-0 m-1'
+                                disableDropdown
                             />
                             <button type="button" className="btn bg-warning ms-2 w-25 text-white rounded-5" onClick={onSignup}>Verify</button>
                         </div>
