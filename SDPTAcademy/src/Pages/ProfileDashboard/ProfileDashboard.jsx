@@ -7,7 +7,7 @@ import './ProfileDashboard.css'
 const ProfileDashboard = () => {
   return (
     <>
-    <Navbar/>
+    <Navbar className="bg-black border-bottom rounded-bottom-4 border-effect"/>
     <div className="dashboard-container ">
       <div className="container-fluid ">
         <div className="row cards-container">
