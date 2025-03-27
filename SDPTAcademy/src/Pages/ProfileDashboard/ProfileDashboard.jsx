@@ -3,6 +3,8 @@ import Navbar from '../../components/Header/Navbar';
 import { auth } from '../../components/configs/firebase-config.js';
 import './ProfileDashboard.css';
 
+import ProfileIcon from '../../assets/Account Icon.svg';
+
 
 const ProfileDashboard = () => {
 
@@ -25,7 +27,7 @@ const ProfileDashboard = () => {
           <div className='col col-md-4 col-sm-12'> 
             <div className="card card-design profile-card text-white text-center align-items-center justify-content-center">
               <div className="content pt-3 text-warning"><h2 className='fw-bold'>Profile Picture</h2></div>
-              <img src={user?.photoURL || '/default-avatar.png'} alt="Profile" className="profile-picture mt-4 mb-4" />
+              <img src={user?.photoURL || ProfileIcon} alt="Profile" className="profile-picture mt-4 mb-4" />
               <p className='mt-2 mb-4'>JPG or PNG no longer than 5MB</p>
               <button className="btn btn-warning mb-5">Upload New Image</button>
             </div>
