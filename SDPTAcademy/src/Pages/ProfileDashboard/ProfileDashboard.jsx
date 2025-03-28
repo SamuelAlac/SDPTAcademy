@@ -3,6 +3,7 @@ import Navbar from '../../components/Header/Navbar';
 import { auth } from '../../components/configs/firebase-config.js';
 import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
 import './ProfileDashboard.css';
+import toast from 'react-hot-toast';
 
 import ProfileIcon from '../../assets/Account Icon.svg';
 
@@ -48,10 +49,10 @@ const ProfileDashboard = () => {
       try {
         // Update firestore document
         await updateDoc(userDocRef, userData); 
-        alert('Changes saved successfully!');
+        toast.success('Changes saved successfully!');
       } catch (error) {
         console.error('Error updating document:', error);
-        alert('Failed to save changes.');
+        toast.error('Failed to save changes.');
       }
     }
   };
