@@ -37,10 +37,11 @@ function App() {
         <Route path='Auth' element={<Auth/>}/>
         <Route path='/CoursePreview' element={<CoursePreview/>}/>
         <Route path='otp' element={<OtpVerification/>}/>
-        <Route path='ProfileDashboard' element={<ProfileDashboard/>}/>
 
+        {/* Only authenticated users may have access to this paths */}
         <Route element={<ProtectedRoutes/>}>
           <Route path='/CoursePlaylist' element={<CoursePlaylist/>}/>
+          <Route path='ProfileDashboard' element={<ProfileDashboard/>}/>
         </Route>
         
       </Routes>
