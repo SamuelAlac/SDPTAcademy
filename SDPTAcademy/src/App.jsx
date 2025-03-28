@@ -38,6 +38,7 @@ function App() {
         <Route path='/CoursePreview' element={<CoursePreview/>}/>
         <Route path='otp' element={<OtpVerification/>}/>
 
+        {/* Only authenticated users may have access to this paths */}
         <Route element={<ProtectedRoutes/>}>
           <Route path='/CoursePlaylist' element={<CoursePlaylist/>}/>
           <Route path='ProfileDashboard' element={<ProfileDashboard/>}/>
