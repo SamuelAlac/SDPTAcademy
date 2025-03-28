@@ -10,7 +10,8 @@ const ProtectedRoutes = () => {
         return <Outlet/>;
     }else{
         //sabihan muna ko pag gagalawin xD - ryu
-        return <Navigate to="/Auth"/>;
+        //nilagay ko sa home paglogout
+        return <Navigate to="/"/>;
     }
 }
 

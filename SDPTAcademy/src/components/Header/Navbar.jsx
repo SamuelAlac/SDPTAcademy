@@ -40,7 +40,7 @@ const Navbar = ({ className }) => {
 
   return (
     <>
-      <Toaster toastOptions={{ duration: 4000 }} /> {/* Add this */}
+      <Toaster toastOptions={{ duration: 4000 }} /> 
       <nav
         className={`navbar navbar-expand-sm ${className} navbar-dark py-3 fixed-top ${
           showNavbar ? 'visible' : 'hidden'
