@@ -10,6 +10,8 @@ import searchIcon from '../../assets/searchIcon.svg'
 import courseImage from '../../assets/courseImage.svg'
 import './courses.css'
 import { useNavigate, Link, replace, Navigate } from 'react-router-dom'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../../components/configs/firebase-config'
 
 
 const Courses = () => {
@@ -20,8 +22,7 @@ const Courses = () => {
   const [courseDescription, setCourseDescription] = useState("");
   const [coursePrice, setCoursePrice] = useState(0);
   const [coursePurchaseDuration, setCoursePurchaseDuration] = useState(0);
-  
-  const isPurchased = true;
+  const [user] = useAuthState(auth);
 
   return (
     <div>
@@ -75,17 +76,15 @@ const Courses = () => {
 
                     <p className="card-text fs-1 fw-bold text-center my-3">₱800<span className='fw-normal'>/1 year</span></p>
 
-                    {!isPurchased &&
-                      <button className="btn btn-warning btn-lg rounded-5 text-white d-flex align-items-center justify-content-center"
-                      data-bs-toggle = "modal" data-bs-target="#purchase">
-                      <img src={cartIcon} alt="" className="img-fluid px-1" />Purchase</button>
-                    }
-
-                    {isPurchased &&
+                    {user ?(
                       <Link className="btn btn-warning btn-lg rounded-5 text-white d-flex align-items-center justify-content-center"
                       to={"/CoursePlaylist"}>
                       <img src={cartIcon} alt="" className="img-fluid px-1" />Play</Link>
-                    }
+                    ):(
+                      <button className="btn btn-warning btn-lg rounded-5 text-white d-flex align-items-center justify-content-center"
+                      data-bs-toggle = "modal" data-bs-target="#purchase">
+                      <img src={cartIcon} alt="" className="img-fluid px-1" />Purchase</button>
+                    )}
                       
                   </div>
                 </div>
